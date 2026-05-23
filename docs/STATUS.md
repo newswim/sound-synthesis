@@ -7,7 +7,8 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 ## Now
 - **Shipped and live.** App deployed on Vercel; custom domain **synth.cool** active
   (HTTPS, www primary). Audio confirmed working on desktop and iOS.
-- Backlog filed as issues #4–#10; AGENTS.md/CLAUDE.md added for agent hand-off.
+- In flight: #14 — social/OG meta + favicon + PWA manifest (PR open).
+- Backlog filed as issues #4–#10, #14; AGENTS.md/CLAUDE.md added for agent hand-off.
 
 ## Done
 - All 8 lessons + audio engine + components + app shell (Svelte 5, Vite, TS, Tailwind v4).
@@ -17,7 +18,7 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
   unlock + `interrupted` recovery, no long-press text selection on buttons.
 
 ## Next
-- Optional polish / new lessons as desired. No outstanding work.
+- Land #14, then optional polish / new lessons as desired.
 
 ## Blockers
 - None.

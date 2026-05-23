@@ -11,6 +11,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #8 — [Cleanup] DPR-aware canvas rendering (crisp visualizers)
 - #9 — [Cleanup] Shared segmented button-group component
 - #10 — [Infra] Unit tests (Vitest) for audio math
+- #14 — [Infra] Social/OG meta + favicon + PWA manifest for synth.cool
 
 **Dependencies:** #5 → #4 (filter envelope must land first). All others are independent
 and parallelizable. #6/#7 touch the Synth Lab / App shell respectively; coordinate if
@@ -38,6 +39,5 @@ worked alongside #5.
 
 ### Cleanup / infra
 - Proper `navigator.audioSession` typing via a `.d.ts` (drop inline cast)
-- Social/OG meta + favicon + PWA manifest for synth.cool
 - Keyboard drag-to-play (legato) + fix release when dragging across keys
 - E2E smoke test (Playwright) loading each lesson

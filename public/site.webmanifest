@@ -1,0 +1,23 @@
+{
+  "name": "Synth School",
+  "short_name": "Synth School",
+  "description": "Learn the fundamentals of sound synthesis — interactive, in the browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a1f",
+  "theme_color": "#0a0a1f",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
