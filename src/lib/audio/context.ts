@@ -61,17 +61,60 @@ export function getMasterAnalyser(): AnalyserNode {
   return masterAnalyser;
 }
 
+let pinged = false;
+
 /**
- * Must run inside a user gesture. Resumes a suspended context (autoplay policy)
- * and flips `audioReady` to true.
+ * Play a one-sample silent buffer. iOS/WebKit only fully unlocks audio output
+ * if some sound is started inside the first user gesture — this is that sound.
+ */
+function playSilentPing(c: AudioContext): void {
+  try {
+    const buffer = c.createBuffer(1, 1, 22050);
+    const src = c.createBufferSource();
+    src.buffer = buffer;
+    src.connect(c.destination);
+    src.start(0);
+  } catch {
+    /* ignore — best-effort unlock */
+  }
+}
+
+/**
+ * Must run inside a user gesture. Resumes the context (autoplay policy; also
+ * recovers from WebKit's "interrupted" state) and flips `audioReady` to true.
  */
 export async function unlockAudio(): Promise<AudioContext> {
   const c = getAudioContext();
-  if (c.state === 'suspended') {
+  // Fire the silent ping synchronously, before any await, so it stays inside
+  // the user gesture (required by WebKit).
+  if (!pinged) {
+    playSilentPing(c);
+    pinged = true;
+  }
+  if (c.state !== 'running' && c.state !== 'closed') {
     await c.resume();
   }
   ready.set(c.state === 'running');
   return c;
+}
+
+/**
+ * Resume audio on the first user interaction anywhere on the page, and again
+ * after the OS interrupts/suspends it (backgrounding, phone calls on mobile).
+ * Listeners are passive and idempotent, so they can stay attached.
+ */
+export function installGlobalAudioUnlock(): void {
+  if (typeof window === 'undefined') return;
+  const handler = () => void unlockAudio();
+  const opts: AddEventListenerOptions = { passive: true };
+  for (const ev of ['pointerdown', 'touchend', 'mousedown', 'keydown']) {
+    window.addEventListener(ev, handler, opts);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && ctx && ctx.state !== 'running') {
+      ctx.resume().catch(() => {});
+    }
+  });
 }
 
 export function now(): number {
