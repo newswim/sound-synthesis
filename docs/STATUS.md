@@ -17,11 +17,11 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 - Lessons 1–8 + sidebar nav with hash routing + master volume.
 
 ## Next
-- Deploy to Vercel — **needs user action** (no Vercel auth in the sandbox; CLI login
-  blocked by network policy). Easiest path: connect the repo via Vercel's Git
-  integration, or set a `VERCEL_TOKEN` in the environment, or run `vercel deploy` locally.
 - Manual in-browser audio pass (not possible in headless CI).
+
+## Done (recent)
+- PR #1 opened (base `main`). README added. GitHub Actions CI builds on each PR.
+- Vercel Git integration connected — PRs get preview deployments automatically.
 
 ## Blockers
 - Live audio not verifiable in this headless env — needs a real browser to confirm sound.
-- Vercel deploy needs credentials (none available here).
