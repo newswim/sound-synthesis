@@ -7,6 +7,7 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 ## Now
 - **Shipped and live.** App deployed on Vercel; custom domain **synth.cool** active
   (HTTPS, www primary). Audio confirmed working on desktop and iOS.
+- Backlog filed as issues #4–#10; AGENTS.md/CLAUDE.md added for agent hand-off.
 
 ## Done
 - All 8 lessons + audio engine + components + app shell (Svelte 5, Vite, TS, Tailwind v4).
