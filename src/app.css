@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0b0e14;
+  --color-panel: #141925;
+  --color-panel-2: #1c2333;
+  --color-edge: #2a3346;
+  --color-ink: #e6ebf5;
+  --color-muted: #8a96ad;
+  --color-accent: #5eead4;
+  --color-accent-2: #a78bfa;
+  --color-warn: #fbbf24;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family:
+    Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100%;
+}
+
+/* Range inputs — themed across browsers */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-edge);
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-bg);
+}
+
+.prose-tight p {
+  margin: 0 0 0.75rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+.prose-tight strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
