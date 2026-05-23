@@ -10,7 +10,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #7 — [UX] Visible audio status / "tap to start" indicator
 - #8 — [Cleanup] DPR-aware canvas rendering (crisp visualizers)
 - #9 — [Cleanup] Shared segmented button-group component
-- #10 — [Infra] Unit tests (Vitest) for audio math
+- #10 — [Infra] Unit tests (Vitest) for audio math — **done** (PR pending)
 - #14 — [Infra] Social/OG meta + favicon + PWA manifest for synth.cool
 
 **Dependencies:** #5 → #4 (filter envelope must land first). All others are independent

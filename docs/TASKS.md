@@ -40,3 +40,6 @@
 - [x] PR (#1 app, #2 mobile fixes — both merged)
 - [x] GitHub Actions CI on each PR
 - [x] Mobile audio working (iOS mute-switch fix)
+
+## Infra
+- [x] Unit tests (Vitest) for pure audio math + `npm test` in CI (#10)
