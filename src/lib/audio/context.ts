@@ -15,12 +15,30 @@ const masterVolume = writable(0.7);
 export const masterVolumeStore = masterVolume;
 
 /**
+ * On iOS, Web Audio defaults to an audio session that is silenced by the
+ * hardware mute switch (unlike <video>/<audio> media playback). Declaring the
+ * session as "playback" (Safari 16.4+) makes our output behave like media:
+ * it plays through the media volume and ignores the mute switch.
+ */
+function declarePlaybackSession(): void {
+  const nav = navigator as Navigator & { audioSession?: { type: string } };
+  if (nav.audioSession) {
+    try {
+      nav.audioSession.type = 'playback';
+    } catch {
+      /* unsupported value — ignore */
+    }
+  }
+}
+
+/**
  * Lazily create the shared AudioContext. The graph is:
  *   ...sources -> masterGain -> limiter -> destination
  * A limiter guards against harsh/loud output while experimenting.
  */
 export function getAudioContext(): AudioContext {
   if (!ctx) {
+    declarePlaybackSession();
     ctx = new AudioContext();
     masterGain = ctx.createGain();
     masterGain.gain.value = 0.7;
