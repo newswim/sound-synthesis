@@ -36,5 +36,7 @@
 
 ## Ship
 - [x] build + preview clean
-- [ ] Deploy to Vercel
-- [ ] PR
+- [x] Deploy to Vercel (live; custom domain synth.cool)
+- [x] PR (#1 app, #2 mobile fixes — both merged)
+- [x] GitHub Actions CI on each PR
+- [x] Mobile audio working (iOS mute-switch fix)

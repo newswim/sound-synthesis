@@ -5,23 +5,18 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 **Updated:** 2026-05-23
 
 ## Now
-- Full first build complete: docs, audio engine, components, all 8 lessons, app shell.
-- `npm run check` and `npm run build` both clean; preview serves OK.
+- **Shipped and live.** App deployed on Vercel; custom domain **synth.cool** active
+  (HTTPS, www primary). Audio confirmed working on desktop and iOS.
 
 ## Done
-- Project scaffold (Vite 6 + Svelte 5 + TS + Tailwind v4).
-- Audio engine: context (master bus + limiter + analyser tap), oscillator, envelope,
-  filter, lfo, voice, tone.
-- Components: Slider, WaveformPicker, PlayButton, Oscilloscope, SpectrumAnalyzer,
-  EnvelopeGraph, FilterResponseGraph, Keyboard, LessonScaffold.
-- Lessons 1–8 + sidebar nav with hash routing + master volume.
+- All 8 lessons + audio engine + components + app shell (Svelte 5, Vite, TS, Tailwind v4).
+- GitHub Actions CI (type-check + build) on every PR; Vercel preview per PR.
+- PR #1 (initial app) and PR #2 (mobile audio + button fixes) merged to `main`.
+- Mobile fixes: iOS mute-switch (`audioSession='playback'`), WebKit gesture/silent-buffer
+  unlock + `interrupted` recovery, no long-press text selection on buttons.
 
 ## Next
-- Manual in-browser audio pass (not possible in headless CI).
-
-## Done (recent)
-- PR #1 opened (base `main`). README added. GitHub Actions CI builds on each PR.
-- Vercel Git integration connected — PRs get preview deployments automatically.
+- Optional polish / new lessons as desired. No outstanding work.
 
 ## Blockers
-- Live audio not verifiable in this headless env — needs a real browser to confirm sound.
+- None.
