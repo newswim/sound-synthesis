@@ -5,12 +5,16 @@ ideas below the line are candidates not yet filed. Keep it terse._
 
 ## Filed (GitHub issues)
 - #4 — [Lesson] Filter envelope (cutoff ADSR)
-- #5 — [Synth Lab] Second oscillator (mix + detune) + filter envelope
+- #5 — [Synth Lab] Second oscillator (mix + detune) + filter envelope — **depends on #4**
 - #6 — [Synth Lab] Preset save/load + shareable patch URL
 - #7 — [UX] Visible audio status / "tap to start" indicator
 - #8 — [Cleanup] DPR-aware canvas rendering (crisp visualizers)
 - #9 — [Cleanup] Shared segmented button-group component
 - #10 — [Infra] Unit tests (Vitest) for audio math
+
+**Dependencies:** #5 → #4 (filter envelope must land first). All others are independent
+and parallelizable. #6/#7 touch the Synth Lab / App shell respectively; coordinate if
+worked alongside #5.
 
 ## Ideas (not yet filed)
 
