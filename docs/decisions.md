@@ -2,6 +2,16 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-05-23 · iOS audio via `navigator.audioSession.type = 'playback'`
+Declare a playback audio session so Web Audio routes through the media channel.
+**Why:** iOS otherwise silences Web Audio with the hardware mute switch (HTML media
+is exempt). **Alt:** route through a muted `<audio>`/MediaStreamDestination (hackier).
+
+## 2026-05-23 · Custom domain via Vercel nameservers
+synth.cool delegates DNS to `ns1/ns2.vercel-dns.com` (not Namecheap A/CNAME records).
+**Why:** Vercel manages records + SSL automatically. **Alt:** keep Namecheap BasicDNS
+and add A (`216.150.1.1`) + CNAME records manually.
+
 ## 2026-05-23 · Tailwind v4 via @tailwindcss/vite
 Use Tailwind v4 with the Vite plugin (CSS-first config, no postcss/tailwind.config).
 **Why:** current standard, less config. **Alt:** Tailwind v3 + postcss.

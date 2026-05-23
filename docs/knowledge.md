@@ -14,5 +14,25 @@ _Reusable findings so we don't rediscover them. Newest at top._
 - **Filter response:** `BiquadFilterNode.getFrequencyResponse(freqHz, mag, phase)`
   gives magnitude per frequency — use a log-spaced freq array for the curve.
 
+## Mobile / iOS audio
+- **iOS mute switch silences Web Audio.** HTML `<video>`/`<audio>` play through the
+  media channel (mute-switch exempt); Web Audio defaults to a session that the
+  hardware silent switch mutes. Diagnostic signature: YouTube plays but the app is
+  silent, while Play toggles and visualizers still animate (graph runs, output muted).
+  **Fix:** set `navigator.audioSession.type = 'playback'` (Safari 16.4+).
+- **WebKit unlock:** resuming the context isn't enough — start a 1-sample silent
+  buffer *inside* the first user gesture to fully unlock output.
+- **`interrupted` state:** WebKit can drop the context to `interrupted` (calls,
+  backgrounding), not just `suspended`. Resume whenever `state !== 'running'`.
+- **All iOS browsers are WebKit** — "Firefox"/"Chrome" on iPhone behave like Safari.
+
+## Mobile UI
+- Disable long-press text selection on `<button>`: `user-select:none` +
+  `-webkit-touch-callout:none`; add `touch-action:manipulation` to kill tap delay.
+
+## Deployment
+- Custom domain: synth.cool uses Vercel nameservers (Namecheap → Custom DNS). With
+  nameserver delegation you manage records in Vercel's "Vercel DNS" tab, not Namecheap.
+
 ## References
 - MDN Web Audio API: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
