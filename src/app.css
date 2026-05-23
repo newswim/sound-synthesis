@@ -35,6 +35,15 @@ body {
   height: 100%;
 }
 
+/* Buttons: stop long-press text selection / the iOS callout menu on touch,
+   and skip the double-tap-zoom delay so taps register instantly. */
+button {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
 /* Range inputs — themed across browsers */
 input[type='range'] {
   -webkit-appearance: none;
