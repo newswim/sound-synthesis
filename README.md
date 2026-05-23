@@ -77,3 +77,7 @@ automatically; previews are created for pull requests.
 A conservative master gain and a limiter sit on the output bus to guard against
 harsh or loud sounds while you experiment. There's also a master volume slider in
 the sidebar.
+
+## License
+
+[MIT](./LICENSE) © Dan Minshew
