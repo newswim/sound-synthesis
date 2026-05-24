@@ -2,6 +2,14 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-05-23 (unit tests — #10)
+- Added Vitest + `npm test` script; CI now runs unit tests before type-check/build.
+- Covered pure audio math: `midiToFreq`/`midiToName`/`freqToMidi` (A4=440, octave doubling,
+  round-trips), `envelopePoints` (monotonic x, sustain levels, segment timing), `logFreqAxis`
+  (bounds, strictly increasing, constant log ratio). 16 tests green.
+- Skipped helpers needing a real AudioContext (`filterResponseDb`, `buildPeriodicWave`,
+  ADSR `triggerAttack`/`triggerRelease`) — out of scope for node-only tests.
+
 ## 2026-05-23 (SEO / social meta — #14)
 - Added Open Graph + Twitter Card meta, canonical, theme-color to `index.html`.
 - New `public/` assets: SVG favicon, PWA icons (192/512/180), 1200×630 OG image.

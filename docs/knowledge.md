@@ -34,5 +34,13 @@ _Reusable findings so we don't rediscover them. Newest at top._
 - Custom domain: synth.cool uses Vercel nameservers (Namecheap → Custom DNS). With
   nameserver delegation you manage records in Vercel's "Vercel DNS" tab, not Namecheap.
 
+## Testing
+- **Vitest runs in node** — only the pure helpers are unit-testable there; anything
+  calling `getAudioContext()` (`filterResponseDb`, `buildPeriodicWave`, ADSR scheduling)
+  needs a real `AudioContext`/`AudioParam` and is out of scope. Note these modules import
+  `getAudioContext` but don't *call* it at module load, so importing them in node is safe.
+- **Float32Array precision:** `logFreqAxis` returns a `Float32Array`, so values carry only
+  ~7 significant digits. Assert intermediate values with `toBeCloseTo(x, 3)`, not `6`.
+
 ## References
 - MDN Web Audio API: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
