@@ -2,6 +2,15 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Content voice pass — #38)
+- Rewrote subtitle/intro/try-this across all 16 lessons. Register modeled on
+  interactive explainers (ref: Jake Lazaroff's CRDT intro): conversational and
+  calm, concrete physical grounding, direct reader address, bold reserved for
+  first-term introductions, imperative demo walkthroughs.
+- Cut the AI tells: em-dash reveal constructions, mic-drop closers on every
+  try-this, lore superlatives, dense bolding. Kept real terminology throughout —
+  audience is general (bright kids included) but never pandered to.
+
 ## 2026-07-18 (Sound Match challenges — #26)
 - New Patching page "Sound Match" (slug `challenges`): four ear-training
   challenges — pitch (±25 cents), waveform (identify), filter cutoff (±⅓ octave),

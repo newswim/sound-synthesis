@@ -37,22 +37,23 @@
   const note = $derived(midiToName(Math.round(freqToMidi(freq))));
 </script>
 
-<LessonScaffold {step} {total} {section} title="What is sound?" subtitle="Two numbers describe every pure tone: how fast it wiggles, and how big the wiggle is.">
+<LessonScaffold {step} {total} {section} title="What is sound?" subtitle="Everything you will ever hear comes down to two numbers.">
   {#snippet intro()}
     <p>
-      Sound is a <strong>vibration</strong> travelling through the air. A loudspeaker pushes
-      air back and forth; your eardrum feels those pressure changes. The simplest possible
-      sound is a <strong>sine wave</strong> — a perfectly smooth back-and-forth.
+      Sound is air moving. A loudspeaker is a surface that pushes air back and forth, and your
+      eardrum is a surface that gets pushed. The simplest possible push is a
+      <strong>sine wave</strong>: a perfectly smooth back-and-forth, repeated over and over.
     </p>
     <p>
-      It has just two properties. <strong>Frequency</strong> (measured in hertz, Hz) is how
-      many wiggles happen per second — this is what we hear as <em>pitch</em>.
-      <strong>Amplitude</strong> is how big each wiggle is — this is what we hear as
-      <em>loudness</em>.
+      Two numbers describe it completely. <strong>Frequency</strong> is how many back-and-forths
+      happen each second, measured in hertz (Hz). We hear frequency as pitch.
+      <strong>Amplitude</strong> is how far the air moves on each push. We hear amplitude as
+      loudness.
     </p>
     <p>
-      Press play, then move the sliders. Watch the <strong>oscilloscope</strong> (the shape of
-      the wave over time) and the <strong>spectrum</strong> (which frequencies are present).
+      Press play and move the sliders. The left graph is an <strong>oscilloscope</strong> — it
+      draws the wave itself. The right one is a <strong>spectrum</strong> — it shows which
+      frequencies the sound contains.
     </p>
   {/snippet}
 
@@ -73,10 +74,10 @@
 
   {#snippet tryThis()}
     <p>
-      A pure sine shows a <strong>single spike</strong> in the spectrum — one frequency, nothing
-      else. Raise the frequency: the wave on the left gets denser and the spike on the right
-      slides upward. Drop the amplitude to zero — the shape flattens and the sound fades, but the
-      pitch never changed. Pitch and loudness are independent.
+      A sine wave shows up in the spectrum as a single spike, because it contains exactly one
+      frequency. Slide the frequency up and watch the wave squeeze together while the spike moves
+      right. Then pull the amplitude to zero. The wave flattens and the sound fades out, but
+      notice what didn't change: the pitch. The two numbers really are independent.
     </p>
   {/snippet}
 </LessonScaffold>

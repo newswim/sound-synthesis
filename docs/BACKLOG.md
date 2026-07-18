@@ -25,6 +25,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #31 — [UX] Master volume moved from sidebar into the lesson scaffold
 - #33 — [UX] Keyboard black keys: visible fill + note labels
 - #35 — [UX] Envelope lesson: accurate copy, latch toggle, hold-A trigger
+- #38 — [Content] Voice pass over all lesson copy
 
 **Dependencies:** #5 → #4 (filter envelope must land first); #25 → #24 (semi-modular
 rack proves the routing UX before the cable canvas). All others are independent and

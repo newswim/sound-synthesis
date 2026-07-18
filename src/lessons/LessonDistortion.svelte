@@ -58,19 +58,19 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Distortion" subtitle="Bend the wave itself — clipping doesn't remove harmonics, it invents them.">
+<LessonScaffold {step} {total} {section} title="Distortion" subtitle="Filters take harmonics away. Distortion makes new ones.">
   {#snippet intro()}
     <p>
-      Every effect so far worked <em>around</em> the wave. Distortion reshapes the wave itself: a
-      <strong>waveshaper</strong> maps each incoming sample through a curve. A gentle curve barely
-      changes the shape; <strong>drive</strong> steepens it until the peaks flatten off —
-      <strong>clipping</strong>, the overloaded-amplifier sound.
+      Every effect so far has left the wave's shape alone. Distortion changes the shape directly.
+      A <strong>waveshaper</strong> pushes each sample through a curve, and the <strong>drive</strong>
+      control steepens that curve until the wave's peaks flatten against the ceiling. The
+      flattening is called <strong>clipping</strong> — it's the sound of an amplifier pushed past
+      what it can handle.
     </p>
     <p>
-      Here's the deep part: filters (Shaping) <em>subtract</em> harmonics, but changing a wave's
-      shape <em>adds</em> them. Feed in a pure sine — one lonely spectrum spike — and crank the
-      drive: the flattened sine sprouts a whole ladder of new odd harmonics, morphing toward a
-      square wave. Distortion is a harmonic generator.
+      Watch what this does to a pure sine. A flattened sine isn't a sine anymore, and a changed
+      shape means changed harmonics: a ladder of new ones appears in the spectrum, and the sound
+      creeps toward a square wave. Filters subtract harmonics. Distortion manufactures them.
     </p>
   {/snippet}
 
@@ -92,11 +92,10 @@
 
   {#snippet tryThis()}
     <p>
-      Play a <strong>sine</strong> at drive 1 — one spike. Sweep drive to 40 and watch the scope
-      square off while the spectrum grows a comb of odd harmonics out of nothing. Switch to a saw:
-      already-rich input distorts into something snarling. Pull <strong>mix</strong> back to ~0.3
-      for "parallel drive" — the clean tone underneath, grit blended on top, a classic mixing
-      trick.
+      Play a sine at drive 1: one spike. Sweep the drive to 40 and watch the scope square off
+      while the spectrum grows teeth. Feed it a saw instead and it snarls — rich input, richer
+      output. Then pull the mix back to about 0.3: clean sound underneath, grit on top. Engineers
+      call that parallel distortion, and it's on more records than you might guess.
     </p>
   {/snippet}
 </LessonScaffold>

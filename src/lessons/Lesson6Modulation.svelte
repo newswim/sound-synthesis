@@ -120,19 +120,21 @@
   ];
 </script>
 
-<LessonScaffold {step} {total} {section} title="Modulation" subtitle="Use one wave to wiggle another — slow wiggles add motion, fast ones invent new tones.">
+<LessonScaffold {step} {total} {section} title="Modulation" subtitle="What happens when one oscillator turns the knobs on another.">
   {#snippet intro()}
     <p>
-      <strong>Modulation</strong> means using one signal to control a parameter of another. The
-      controller is often a <strong>Low-Frequency Oscillator (LFO)</strong> — an oscillator too
-      slow to hear (under ~20 Hz), used as a remote control.
+      So far you've moved every control by hand. <strong>Modulation</strong> hands a control to a
+      machine: one signal automatically wiggles a setting on another. The machine is usually an
+      <strong>LFO</strong>, a low-frequency oscillator — too slow to hear as a tone, useful as a
+      remote control.
     </p>
     <p>
-      Point an LFO at <strong>pitch</strong> and you get <strong>vibrato</strong>. Point it at
-      <strong>volume</strong> and you get <strong>tremolo</strong>. Now speed the modulator up into
-      the audible range and point it at pitch: it's too fast to hear as wobble and instead spawns
-      whole new harmonics — that's <strong>FM synthesis</strong>, famous for bells and electric
-      pianos.
+      Point the LFO at pitch and you get <strong>vibrato</strong>, a singer's wobble. Point it at
+      volume and you get <strong>tremolo</strong>. Then try something stranger: speed the
+      modulator up until it becomes a pitch itself. It's now too fast to hear as movement, so your
+      ear hears something else entirely — brand-new frequencies appear around the original. That
+      is <strong>FM synthesis</strong>, and it's how digital synths in the 1980s made all those
+      bells and electric pianos.
     </p>
   {/snippet}
 
@@ -168,11 +170,10 @@
 
   {#snippet tryThis()}
     <p>
-      In <strong>vibrato</strong>, a gentle 5 Hz / 20 Hz setting is a singer's wobble — watch the
-      scope shimmer side to side. Switch to <strong>FM</strong> and push the <strong>index</strong>
-      up: the single spectrum spike erupts into a cluster of metallic sidebands. Change the
-      <strong>ratio</strong> to retune which harmonics appear — whole numbers sound musical,
-      in-between values sound clangorous and bell-like.
+      In vibrato mode, 5 Hz at a depth of 20 Hz is a gentle, singerly wobble — watch the scope
+      sway. Switch to FM and push the index up: the single spike in the spectrum bursts into a
+      cluster of sidebands. Then play with the ratio. Whole numbers land in tune with the
+      original; in-between values sound like bells and gongs.
     </p>
   {/snippet}
 </LessonScaffold>

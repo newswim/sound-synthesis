@@ -71,19 +71,18 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Delay & feedback" subtitle="Copy the sound, play it back late — then feed the echo back into itself.">
+<LessonScaffold {step} {total} {section} title="Delay & feedback" subtitle="An echo, and then an echo of the echo.">
   {#snippet intro()}
     <p>
-      A <strong>delay</strong> is the simplest effect there is: record the signal, play it back a
-      moment later, mix it with the original. One echo. The magic comes from
-      <strong>feedback</strong> — wiring the delay's <em>output back into its own input</em>, so
-      every echo makes another, quieter echo.
+      A <strong>delay</strong> records the signal and plays it back a moment later. On its own
+      that gives you exactly one echo. The interesting part is <strong>feedback</strong>: wire the
+      delay's output back into its own input, and every echo produces a quieter copy of itself.
     </p>
     <p>
-      This is your first <strong>feedback loop</strong>, and it's a big idea: until now every
-      signal flowed one way, source → output. Loops let a patch develop a life of its own — each
-      trip around the loop the sound is multiplied by the feedback amount, so below 1.0 it decays
-      away; near 1.0 it almost lasts forever.
+      This is the first time in the course a signal travels in a loop instead of a straight line,
+      and loops have personality. Each trip around, the sound is multiplied by the feedback
+      amount. Keep it low and the echoes die out politely. Push it toward 1.0 and they very nearly
+      refuse to leave.
     </p>
   {/snippet}
 
@@ -102,11 +101,11 @@
 
   {#snippet tryThis()}
     <p>
-      Set <strong>time</strong> ≈ 90 ms with low feedback — that tight double is "slapback", the
-      1950s rock-and-roll vocal sound. Now push time toward 450 ms and <strong>feedback</strong>
-      to 0.85: a canyon. Then grab the time slider and <em>drag it while echoes ring</em> — the
-      pitch smears like a tape machine changing speed, because the notes already inside the delay
-      line get stretched or squeezed.
+      Set the time to about 90 ms with low feedback. That tight doubling is called slapback — it's
+      all over 1950s rock records. Now push the time toward 450 ms and the feedback to 0.85, and
+      you've built a canyon. One more experiment: drag the time slider while echoes are still
+      going. The pitch smears, and it's not a glitch — the sound already inside the delay is being
+      stretched, exactly like tape changing speed.
     </p>
   {/snippet}
 </LessonScaffold>

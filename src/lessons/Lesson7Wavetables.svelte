@@ -50,18 +50,18 @@
   onDestroy(() => tone.dispose());
 </script>
 
-<LessonScaffold {step} {total} {section} title="Lab: Wave Builder" subtitle="Run the recipe backwards: stack sine harmonics to build any tone from scratch.">
+<LessonScaffold {step} {total} {section} title="Lab: Wave Builder" subtitle="You've been reading harmonic recipes. Time to write one.">
   {#snippet intro()}
     <p>
-      In Lesson 2 we <em>read</em> a wave's harmonic recipe in the spectrum. Here we
-      <strong>write</strong> one. <strong>Additive synthesis</strong> builds a sound by adding
-      sine waves at multiples of the fundamental, each with its own level.
+      In the waveforms lesson you saw that every repeating shape is secretly a stack of sines.
+      This lab runs that idea in reverse: you set the level of each harmonic yourself, and the
+      browser builds the wave. This is <strong>additive synthesis</strong> — an idea older than
+      electronics. Pipe organs did it with pipes.
     </p>
     <p>
-      The Web Audio API does this with a <strong>PeriodicWave</strong> — you hand it a list of
-      harmonic amplitudes and it gives you a custom oscillator shape (a single-cycle
-      <strong>wavetable</strong>). Slide the bars to dial in harmonics and watch the wave and tone
-      form in real time.
+      Each vertical slider is one harmonic. The first is the fundamental; the second vibrates
+      twice as fast; and so on up to eight. Your recipe becomes a custom single-cycle wave — a
+      small <strong>wavetable</strong> — and you can hear and see it change as you move the bars.
     </p>
   {/snippet}
 
@@ -101,10 +101,10 @@
 
   {#snippet tryThis()}
     <p>
-      Start from <strong>Sine</strong> (only harmonic 1). Add harmonic 2 — the wave bends. Click
-      <strong>Saw</strong> to see every harmonic present at decreasing levels, then <strong>Square</strong>
-      to see the even ones vanish. Additive is the inverse of the subtractive filtering from Lesson
-      5: instead of carving harmonics away, you place each one by hand.
+      Start from the Sine preset and slowly raise harmonic 2 — watch the shape bend as a second
+      sine folds in. Load the Saw preset and compare it with the real saw from the waveforms
+      lesson. Then break the rules on purpose: silence the fundamental and keep only harmonics
+      five through eight. Nothing else in this course makes that sound — you just did.
     </p>
   {/snippet}
 </LessonScaffold>

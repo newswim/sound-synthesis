@@ -71,20 +71,20 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Reverb" subtitle="A room is thousands of echoes — teach the computer what a space sounds like.">
+<LessonScaffold {step} {total} {section} title="Reverb" subtitle="Every room you've ever been in is an instrument.">
   {#snippet intro()}
     <p>
-      Clap in a cathedral and you hear thousands of overlapping echoes off every surface, smearing
-      into a wash. That's <strong>reverb</strong> — not one delay but a dense cloud of them. The
-      space's acoustic fingerprint is its <strong>impulse response</strong>: the sound it makes
-      when excited by a single instantaneous "click".
+      Clap in a big empty church and the clap smears into a long, soft wash. What you're hearing
+      is thousands of echoes off every surface, arriving too close together to count.
+      <strong>Reverb</strong> is that wash, and each space makes its own. A room's fingerprint is
+      its <strong>impulse response</strong> — the exact way it answers one sharp clap.
     </p>
     <p>
-      <strong>Convolution</strong> reverb applies that fingerprint to any signal — every sample of
-      your sound triggers the whole room response, all of them summed. Real impulse responses are
-      recorded in real spaces; here we synthesize one from a burst of <strong>decaying noise</strong>,
-      which sounds surprisingly like a real room. <strong>Size</strong> is the response's length;
-      <strong>decay</strong> is how fast it fades.
+      <strong>Convolution</strong> reverb takes a fingerprint and applies it to any sound: every
+      sample of your note triggers the whole room, all overlapping. Real fingerprints are recorded
+      in real places with real claps. Ours is built from a burst of fading noise, which turns out
+      to sound remarkably like a room. Size sets how long the response lasts; decay sets how fast
+      it dies away.
     </p>
   {/snippet}
 
@@ -103,10 +103,11 @@
 
   {#snippet tryThis()}
     <p>
-      Size 0.3 with high decay is a closet; size 4 with decay 1.5 is a cathedral — listen to the
-      tail breathe after each pluck. Push <strong>mix</strong> to 1.0: the dry pluck disappears and
-      only the ghost of the room remains, an instant ambient pad. Reverb is why sounds feel
-      <em>somewhere</em> — every record you love has a space dialed in on purpose.
+      Set the size to 0.3 and you're in a closet. Set it to 4 seconds with a gentle decay and
+      you're in a cathedral — listen to the tail breathe after each pluck. Then push the mix all
+      the way to 1.0, so only the room remains and the plucks turn into ghosts. Next time you
+      listen to a recording you love, notice the space around it. Someone chose that room on
+      purpose.
     </p>
   {/snippet}
 </LessonScaffold>
