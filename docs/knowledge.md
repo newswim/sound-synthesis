@@ -47,6 +47,12 @@ _Reusable findings so we don't rediscover them. Newest at top._
   `-webkit-touch-callout:none`; add `touch-action:manipulation` to kill tap delay.
 
 ## Deployment
+- **Canonical must match the primary host.** synth.cool (apex) 307-redirects to
+  www.synth.cool (Vercel's primary) — a canonical pointing at the apex points at a
+  redirect. All absolute URLs (canonical/OG/sitemap/JSON-LD) use `https://www.synth.cool`.
+- The SPA rewrite in vercel.json serves `index.html` for *any* path with a 200 —
+  robots.txt/sitemap.xml must exist as real files or crawlers get HTML; unknown
+  routes need client-side normalization to avoid soft-404s.
 - Custom domain: synth.cool uses Vercel nameservers (Namecheap → Custom DNS). With
   nameserver delegation you manage records in Vercel's "Vercel DNS" tab, not Namecheap.
 

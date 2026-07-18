@@ -1,4 +1,5 @@
 import type { Component } from 'svelte';
+import meta from './meta.json';
 import Lesson1Sound from '../../lessons/Lesson1Sound.svelte';
 import Lesson2Waveforms from '../../lessons/Lesson2Waveforms.svelte';
 import Lesson3Pitch from '../../lessons/Lesson3Pitch.svelte';
@@ -25,6 +26,8 @@ export interface Lesson {
   slug: string;
   title: string;
   blurb: string;
+  /** Per-page meta description (also used by the prerender/sitemap script). */
+  description: string;
   /** Labs integrate their section's concepts into one project. */
   lab?: boolean;
   component: Component<LessonProps>;
@@ -35,44 +38,37 @@ export interface Section {
   lessons: Lesson[];
 }
 
-/** Curriculum: sections of lessons, each culminating in a lab. */
-export const sections: Section[] = [
-  {
-    title: 'Basics',
-    lessons: [
-      { slug: 'sound', title: 'What is sound?', blurb: 'Frequency & amplitude', component: Lesson1Sound },
-      { slug: 'waveforms', title: 'Waveforms', blurb: 'Shape & timbre', component: Lesson2Waveforms },
-      { slug: 'pitch', title: 'Pitch & frequency', blurb: 'Notes, octaves, A440', component: Lesson3Pitch },
-      { slug: 'wavetables', title: 'Wave Builder', blurb: 'Lab · additive synthesis', lab: true, component: Lesson7Wavetables },
-    ],
-  },
-  {
-    title: 'Shaping',
-    lessons: [
-      { slug: 'envelopes', title: 'Envelopes (ADSR)', blurb: 'Shaping a note in time', component: Lesson4Envelopes },
-      { slug: 'filters', title: 'Filters & EQ', blurb: 'Cutoff & resonance', component: Lesson5Filters },
-      { slug: 'modulation', title: 'Modulation', blurb: 'LFO, vibrato & FM', component: Lesson6Modulation },
-      { slug: 'percussion', title: 'Noise & percussion', blurb: 'Drums from static', component: LessonPercussion },
-      { slug: 'synth-lab', title: 'Synth Lab', blurb: 'Lab · the subtractive chain', lab: true, component: Lesson8SynthLab },
-    ],
-  },
-  {
-    title: 'Effects',
-    lessons: [
-      { slug: 'delay', title: 'Delay & feedback', blurb: 'Echoes & feedback loops', component: LessonDelay },
-      { slug: 'chorus', title: 'Chorus & flanger', blurb: 'One delay, modulated', component: LessonChorus },
-      { slug: 'distortion', title: 'Distortion', blurb: 'Clipping creates harmonics', component: LessonDistortion },
-      { slug: 'reverb', title: 'Reverb', blurb: 'Rooms from noise', component: LessonReverb },
-      { slug: 'fx-rack', title: 'FX Rack', blurb: 'Lab · chain the pedals', lab: true, component: LessonFxRack },
-    ],
-  },
-  {
-    title: 'Patching',
-    lessons: [
-      { slug: 'signal-chain', title: 'Signal Chain', blurb: 'Lab · route the modulation', lab: true, component: LessonSignalChain },
-    ],
-  },
-];
+export const SITE = {
+  name: meta.siteName,
+  baseUrl: meta.baseUrl,
+  title: meta.siteTitle,
+  description: meta.siteDescription,
+};
+
+const COMPONENTS: Record<string, Component<LessonProps>> = {
+  sound: Lesson1Sound,
+  waveforms: Lesson2Waveforms,
+  pitch: Lesson3Pitch,
+  wavetables: Lesson7Wavetables,
+  envelopes: Lesson4Envelopes,
+  filters: Lesson5Filters,
+  modulation: Lesson6Modulation,
+  percussion: LessonPercussion,
+  'synth-lab': Lesson8SynthLab,
+  delay: LessonDelay,
+  chorus: LessonChorus,
+  distortion: LessonDistortion,
+  reverb: LessonReverb,
+  'fx-rack': LessonFxRack,
+  'signal-chain': LessonSignalChain,
+};
+
+/** Curriculum: titles/blurbs/descriptions live in meta.json (shared with the
+ *  prerender script); components are attached here by slug. */
+export const sections: Section[] = meta.sections.map((s) => ({
+  title: s.title,
+  lessons: s.lessons.map((l) => ({ ...l, component: COMPONENTS[l.slug] })),
+}));
 
 export interface LessonEntry extends Lesson {
   section: string;

@@ -1,0 +1,122 @@
+{
+  "siteName": "Synth School",
+  "baseUrl": "https://www.synth.cool",
+  "siteTitle": "Synth School · Learn Sound Synthesis",
+  "siteDescription": "An interactive, step-by-step introduction to the fundamentals of sound synthesis: waveforms, envelopes, filters, modulation and more.",
+  "sections": [
+    {
+      "title": "Basics",
+      "lessons": [
+        {
+          "slug": "sound",
+          "title": "What is sound?",
+          "blurb": "Frequency & amplitude",
+          "description": "Learn what sound is: frequency and amplitude explained with a live oscillator, oscilloscope and spectrum analyzer you can play in the browser."
+        },
+        {
+          "slug": "waveforms",
+          "title": "Waveforms",
+          "blurb": "Shape & timbre",
+          "description": "Hear and see how sine, square, sawtooth and triangle waves differ — harmonics, timbre and tone colour explained interactively."
+        },
+        {
+          "slug": "pitch",
+          "title": "Pitch & frequency",
+          "blurb": "Notes, octaves, A440",
+          "description": "How musical notes map to frequency in hertz: octaves, semitones and A440, explored on an interactive keyboard."
+        },
+        {
+          "slug": "wavetables",
+          "title": "Wave Builder",
+          "blurb": "Lab · additive synthesis",
+          "lab": true,
+          "description": "Build your own waveform from sine harmonics — an interactive introduction to additive synthesis and wavetables."
+        }
+      ]
+    },
+    {
+      "title": "Shaping",
+      "lessons": [
+        {
+          "slug": "envelopes",
+          "title": "Envelopes (ADSR)",
+          "blurb": "Shaping a note in time",
+          "description": "ADSR envelopes explained: attack, decay, sustain and release, with an interactive envelope you can shape and hear."
+        },
+        {
+          "slug": "filters",
+          "title": "Filters & EQ",
+          "blurb": "Cutoff & resonance",
+          "description": "Low-pass, high-pass and band-pass filters explained: sweep cutoff and resonance on a live sawtooth and hear subtractive synthesis at work."
+        },
+        {
+          "slug": "modulation",
+          "title": "Modulation",
+          "blurb": "LFO, vibrato & FM",
+          "description": "LFOs, vibrato, tremolo and FM synthesis: use one oscillator to modulate another and hear entirely new tones emerge."
+        },
+        {
+          "slug": "percussion",
+          "title": "Noise & percussion",
+          "blurb": "Drums from static",
+          "description": "Synthesize drums from scratch: kick, snare and hi-hats built from noise, filters and envelopes — playable in the browser."
+        },
+        {
+          "slug": "synth-lab",
+          "title": "Synth Lab",
+          "blurb": "Lab · the subtractive chain",
+          "lab": true,
+          "description": "A playable subtractive synthesizer in the browser: oscillator, filter, ADSR envelope and vibrato LFO wired into one signal chain."
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "lessons": [
+        {
+          "slug": "delay",
+          "title": "Delay & feedback",
+          "blurb": "Echoes & feedback loops",
+          "description": "Delay and feedback explained: build echoes, slapback and self-oscillating feedback loops with an interactive delay effect."
+        },
+        {
+          "slug": "chorus",
+          "title": "Chorus & flanger",
+          "blurb": "One delay, modulated",
+          "description": "Chorus and flanger are one modulated delay: hear how LFO depth, base delay and feedback create shimmer and jet-engine sweeps."
+        },
+        {
+          "slug": "distortion",
+          "title": "Distortion",
+          "blurb": "Clipping creates harmonics",
+          "description": "Distortion and waveshaping explained: watch clipping create new harmonics from a pure sine wave, live in the browser."
+        },
+        {
+          "slug": "reverb",
+          "title": "Reverb",
+          "blurb": "Rooms from noise",
+          "description": "Convolution reverb explained: impulse responses, room size and decay, with an interactive reverb you can tweak in real time."
+        },
+        {
+          "slug": "fx-rack",
+          "title": "FX Rack",
+          "blurb": "Lab · chain the pedals",
+          "lab": true,
+          "description": "Chain delay, chorus, distortion and reverb into a pedalboard — reorder the effects and hear why signal order matters."
+        }
+      ]
+    },
+    {
+      "title": "Patching",
+      "lessons": [
+        {
+          "slug": "signal-chain",
+          "title": "Signal Chain",
+          "blurb": "Lab · route the modulation",
+          "lab": true,
+          "description": "A semi-modular synth in the browser: reorder the signal chain and patch an LFO to pitch, cutoff, volume or delay time."
+        }
+      ]
+    }
+  ]
+}
