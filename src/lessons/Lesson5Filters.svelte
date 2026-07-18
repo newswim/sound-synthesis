@@ -11,8 +11,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   let playing = $state(false);
   let type = $state<FilterType>('lowpass');
@@ -77,7 +78,7 @@
   onDestroy(stop);
 </script>
 
-<LessonScaffold {step} {total} title="Filters & EQ" subtitle="Carve away harmonics to sculpt a bright wave into the tone you want.">
+<LessonScaffold {step} {total} {section} title="Filters & EQ" subtitle="Carve away harmonics to sculpt a bright wave into the tone you want.">
   {#snippet intro()}
     <p>
       We start with a harmonic-rich saw, then <strong>subtract</strong> from it. A

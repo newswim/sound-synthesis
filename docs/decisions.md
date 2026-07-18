@@ -2,6 +2,20 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-07-18 · Sectioned curriculum: Basics / Shaping / Effects, each ending in a lab
+Lessons are grouped into sections in `lessons.ts`; the last lesson of each section is a
+lab that integrates that section's concepts (Wave Builder, Synth Lab, FX Rack). Slugs
+are unchanged so deep links survive; numbering is per-section.
+**Why:** a flat list doesn't scale past ~8 lessons, and labs give each section a payoff.
+**Alt:** flat list with one capstone (what we outgrew).
+
+## 2026-07-18 · Effects as wet/dry classes with a uniform input/output interface
+`effects.ts` — FeedbackDelay, Chorus, Distortion, Reverb share `input`/`output` GainNodes
+and live setters (`setTargetAtTime`), so lessons and the FX Rack chain them arbitrarily.
+Reverb IRs are generated (decaying noise), no sample assets.
+**Why:** rack-chainable units; the graph stays raw Web Audio per project philosophy.
+**Alt:** per-lesson inline graphs (no reuse), or an effects library dependency.
+
 ## 2026-07-18 · Live voice edits via `Voice.update()`, not node rebuild
 Sliders push config into sounding voices (`setTargetAtTime` on params; LFO always
 wired so depth can rise from 0 mid-note). Attack/decay stay as scheduled; sustain

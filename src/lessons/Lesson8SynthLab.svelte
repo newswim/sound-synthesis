@@ -17,8 +17,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   let waveform = $state<Waveform>('sawtooth');
   let filterType = $state<FilterType>('lowpass');
@@ -59,7 +60,7 @@
   });
 </script>
 
-<LessonScaffold {step} {total} title="Capstone: Synth Lab" subtitle="Every piece you've met, wired into one playable signal chain.">
+<LessonScaffold {step} {total} {section} title="Lab: Synth Lab" subtitle="Everything from this section, wired into one playable signal chain.">
   {#snippet intro()}
     <p>
       This is a real (if small) <strong>subtractive synth</strong>. A key press creates a

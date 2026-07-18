@@ -11,8 +11,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   const tone = new Tone();
   let playing = $state(false);
@@ -36,7 +37,7 @@
   const note = $derived(midiToName(Math.round(freqToMidi(freq))));
 </script>
 
-<LessonScaffold {step} {total} title="What is sound?" subtitle="Two numbers describe every pure tone: how fast it wiggles, and how big the wiggle is.">
+<LessonScaffold {step} {total} {section} title="What is sound?" subtitle="Two numbers describe every pure tone: how fast it wiggles, and how big the wiggle is.">
   {#snippet intro()}
     <p>
       Sound is a <strong>vibration</strong> travelling through the air. A loudspeaker pushes

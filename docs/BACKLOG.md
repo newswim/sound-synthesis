@@ -13,6 +13,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #10 — [Infra] Unit tests (Vitest) for audio math
 - #14 — [Infra] Social/OG meta + favicon + PWA manifest for synth.cool
 - #16 — [UX] Controls modulate sounding audio (live-reactive sliders)
+- #18 — [Curriculum] Effects module + sectioned curriculum (labs per section)
 
 **Dependencies:** #5 → #4 (filter envelope must land first). All others are independent
 and parallelizable. #6/#7 touch the Synth Lab / App shell respectively; coordinate if
@@ -22,9 +23,12 @@ worked alongside #5.
 
 ### Lessons / content
 - Noise & percussion (white/pink noise → hats/snares via envelope + filter)
-- Effects: delay, reverb (`ConvolverNode`), waveshaper distortion, chorus
 - Step sequencer / arpeggiator to hear patterns in motion
 - Music-theory bridge: scales & chords on the keyboard
+- AM/ring modulation (sibling to the FM lesson)
+- Karplus-Strong plucked string (AudioWorklet; physical-modeling teaser)
+- Sound-matching challenges ("recreate this patch", auto-scored via analyser)
+- Semi-modular rack → free-patch playground (modules unlock per section)
 
 ### Synth Lab
 - Web MIDI input (play from a hardware MIDI keyboard)

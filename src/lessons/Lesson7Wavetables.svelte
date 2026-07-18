@@ -10,8 +10,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   const N = 8;
   let amps = $state<number[]>([1, 0, 0, 0, 0, 0, 0, 0]);
@@ -49,7 +50,7 @@
   onDestroy(() => tone.dispose());
 </script>
 
-<LessonScaffold {step} {total} title="Wavetables & additive synthesis" subtitle="Run the recipe backwards: stack sine harmonics to build any tone from scratch.">
+<LessonScaffold {step} {total} {section} title="Lab: Wave Builder" subtitle="Run the recipe backwards: stack sine harmonics to build any tone from scratch.">
   {#snippet intro()}
     <p>
       In Lesson 2 we <em>read</em> a wave's harmonic recipe in the spectrum. Here we

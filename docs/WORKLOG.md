@@ -2,6 +2,19 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Effects module + sectioned curriculum)
+- Curriculum now has sections — Basics / Shaping / Effects — each ending in a **lab**
+  (Wave Builder, Synth Lab, FX Rack). Grouped sidebar, per-section numbering, LAB
+  badges; slugs unchanged.
+- New `effects.ts`: FeedbackDelay, Chorus, Distortion (tanh waveshaper), Reverb
+  (generated IR) — uniform input/output + live setters. `Voice`/`Tone` take an
+  optional destination node so sources can feed effect chains.
+- Four new lessons (delay, chorus/flanger, distortion, reverb) + **Lab: FX Rack**
+  (keyboard synth → reorderable, toggleable pedalboard with live chain chips).
+- Verified in-browser: echoes circulate ~2.5 s after source stops (fb 0.85); chorus
+  depth 0→8 ms raises RMS spread 13×; flanger comb sweeps; drive 1→40 lifts sine
+  brightness 3.9→28; reverb tails scale with size; rack rewire + order swap audible.
+
 ## 2026-07-18 (UX: live-reactive controls, part 2 — dead effects)
 - User repro: Lesson 5 cutoff/resonance did nothing until stop/restart. Root cause:
   `$effect` bodies guarded by a null node read no state on their first run → zero

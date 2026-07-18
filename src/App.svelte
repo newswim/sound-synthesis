@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { lessons, indexForSlug } from './lib/lessons/lessons';
+  import { lessons, sections, indexForSlug } from './lib/lessons/lessons';
   import { masterVolumeStore } from './lib/audio/context';
 
   let current = $state(0);
@@ -42,23 +42,34 @@
         <p class="text-xs text-[var(--color-muted)]">Learn sound synthesis by ear</p>
       </div>
       <nav class="flex-1 space-y-1 overflow-y-auto">
-        {#each lessons as lesson, i (lesson.slug)}
-          <button
-            onclick={() => go(i)}
-            class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition"
-            style={i === current ? 'background:var(--color-panel-2)' : ''}
-          >
-            <span
-              class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-              style={i === current
-                ? 'background:var(--color-accent);color:#04201b'
-                : 'background:var(--color-edge);color:var(--color-muted)'}
-            >{i + 1}</span>
-            <span>
-              <span class="block text-sm font-medium text-[var(--color-ink)]">{lesson.title}</span>
-              <span class="block text-xs text-[var(--color-muted)]">{lesson.blurb}</span>
-            </span>
-          </button>
+        {#each sections as sec (sec.title)}
+          <p class="px-3 pt-3 pb-1 font-mono text-[10px] tracking-widest text-[var(--color-muted)] uppercase first:pt-0">
+            {sec.title}
+          </p>
+          {#each sec.lessons as lesson, si (lesson.slug)}
+            {@const i = indexForSlug(lesson.slug)}
+            <button
+              onclick={() => go(i)}
+              class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition"
+              style={i === current ? 'background:var(--color-panel-2)' : ''}
+            >
+              <span
+                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                style={i === current
+                  ? 'background:var(--color-accent);color:#04201b'
+                  : 'background:var(--color-edge);color:var(--color-muted)'}
+              >{si + 1}</span>
+              <span class="min-w-0">
+                <span class="flex items-center gap-1.5 text-sm font-medium text-[var(--color-ink)]">
+                  <span class="truncate">{lesson.title}</span>
+                  {#if lesson.lab}
+                    <span class="rounded border border-[var(--color-accent-2)] px-1 font-mono text-[9px] tracking-wider text-[var(--color-accent-2)]">LAB</span>
+                  {/if}
+                </span>
+                <span class="block text-xs text-[var(--color-muted)]">{lesson.blurb}</span>
+              </span>
+            </button>
+          {/each}
         {/each}
       </nav>
       <div class="mt-4 border-t border-[var(--color-edge)] px-2 pt-4">
@@ -92,7 +103,11 @@
       <span class="text-sm font-medium">{lessons[current].title}</span>
     </header>
 
-    <Active step={current + 1} total={lessons.length} />
+    <Active
+      step={lessons[current].step}
+      total={lessons[current].total}
+      section={lessons[current].section}
+    />
 
     <!-- Prev / Next -->
     <div class="mx-auto flex max-w-3xl items-center justify-between gap-3 px-5 pb-16">
