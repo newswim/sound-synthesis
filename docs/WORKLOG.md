@@ -2,6 +2,12 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Keyboard black keys — #33)
+- Black keys were filled #11151f — near-identical to the page background — so the
+  keyboard read as white-keys-only and sharps looked missing. Now a distinct fill
+  (#2a3147) with border + drop shadow, and visible note labels (C#, D#, …) to
+  match the labeled white keys.
+
 ## 2026-07-18 (Master volume placement — #31)
 - Moved master volume out of the (now-crowded) sidebar into LessonScaffold: one
   compact `Volume` slider + % readout, right-aligned above every demo panel.
