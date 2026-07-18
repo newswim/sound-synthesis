@@ -3,6 +3,7 @@
 _Append-only. Newest at top. One short entry per work session._
 
 ## 2026-07-18 (SEO pass — #29)
+- Added `humans.txt` (+ `rel="author"` link); ASCII-only (no charset header on .txt).
 - **Path routing** replaces hash routing (`/filters` etc.); legacy `#/` links
   redirect client-side; unknown slugs normalize to `/`; sidebar items are real
   `<a>` links; head (title/description/canonical) updates on client nav.
