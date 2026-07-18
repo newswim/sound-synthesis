@@ -2,6 +2,13 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-07-18 · Live voice edits via `Voice.update()`, not node rebuild
+Sliders push config into sounding voices (`setTargetAtTime` on params; LFO always
+wired so depth can rise from 0 mid-note). Attack/decay stay as scheduled; sustain
+retargets once decay has passed; release is read at `stop()`.
+**Why:** rebuilding nodes mid-note clicks and re-triggers the envelope.
+**Alt:** stop/restart the voice on edit (audible glitch), or per-param setters (chattier API).
+
 ## 2026-05-23 · iOS audio via `navigator.audioSession.type = 'playback'`
 Declare a playback audio session so Web Audio routes through the media channel.
 **Why:** iOS otherwise silences Web Audio with the hardware mute switch (HTML media

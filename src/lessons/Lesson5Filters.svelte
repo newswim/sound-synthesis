@@ -64,14 +64,14 @@
     analyser = null;
   }
 
+  // Read params before the null guard — $effect only tracks what a run actually reads,
+  // so a guarded read while `filter` is null would leave the effect with no deps, dead.
   $effect(() => {
-    if (filter) filter.type = type;
-  });
-  $effect(() => {
-    if (filter) filter.frequency.setTargetAtTime(cutoff, getAudioContext().currentTime, 0.01);
-  });
-  $effect(() => {
-    if (filter) filter.Q.setTargetAtTime(resonance, getAudioContext().currentTime, 0.01);
+    const [t, hz, q] = [type, cutoff, resonance];
+    if (!filter) return;
+    filter.type = t;
+    filter.frequency.setTargetAtTime(hz, getAudioContext().currentTime, 0.01);
+    filter.Q.setTargetAtTime(q, getAudioContext().currentTime, 0.01);
   });
 
   onDestroy(stop);

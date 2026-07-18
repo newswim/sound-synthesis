@@ -34,6 +34,9 @@
 - [x] 7 Wavetables / additive
 - [x] 8 Capstone: Synth Lab
 
+## Polish
+- [x] Live-reactive controls on held notes (lessons 3/4/8 via `Voice.update()`)
+
 ## Ship
 - [x] build + preview clean
 - [x] Deploy to Vercel (live; custom domain synth.cool)

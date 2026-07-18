@@ -41,6 +41,11 @@
     voices.get(midi)?.stop();
     voices.delete(midi);
   }
+  // Waveform switch applies to held notes too.
+  $effect(() => {
+    const c = cfg();
+    voices.forEach((v) => v.update(c));
+  });
 
   onDestroy(() => {
     voices.forEach((v) => v.stop());

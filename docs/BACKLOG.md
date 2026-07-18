@@ -12,6 +12,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #9 — [Cleanup] Shared segmented button-group component
 - #10 — [Infra] Unit tests (Vitest) for audio math
 - #14 — [Infra] Social/OG meta + favicon + PWA manifest for synth.cool
+- #16 — [UX] Controls modulate sounding audio (live-reactive sliders)
 
 **Dependencies:** #5 → #4 (filter envelope must land first). All others are independent
 and parallelizable. #6/#7 touch the Synth Lab / App shell respectively; coordinate if

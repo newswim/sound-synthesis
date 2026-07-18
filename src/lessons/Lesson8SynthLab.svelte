@@ -48,6 +48,11 @@
     voices.get(midi)?.stop();
     voices.delete(midi);
   }
+  // Push control edits to already-sounding voices.
+  $effect(() => {
+    const c = cfg();
+    voices.forEach((v) => v.update(c));
+  });
   onDestroy(() => {
     voices.forEach((v) => v.stop());
     voices.clear();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy } from 'svelte';
+  import { onDestroy, untrack } from 'svelte';
   import LessonScaffold from '../lib/components/LessonScaffold.svelte';
   import Slider from '../lib/components/Slider.svelte';
   import PlayButton from '../lib/components/PlayButton.svelte';
@@ -88,22 +88,25 @@
     }
   }
 
-  // Structural change -> rebuild graph.
+  // Structural change -> rebuild graph. untrack: stop()/start() read *and* replace
+  // the `analyser` state, which would otherwise make this effect retrigger itself.
   $effect(() => {
     mode;
-    restart();
+    untrack(restart);
   });
 
-  // Live parameter updates.
+  // Live parameter updates. Read params before the null guard — $effect only tracks
+  // what a run actually reads; bailing while `mod` is null would leave it depless, dead.
   $effect(() => {
+    const [mo, r, d, ra, i] = [mode, rate, depth, ratio, index];
     const ctx = getAudioContext();
     if (!mod || !modGain) return;
-    if (mode === 'fm') {
-      mod.frequency.setTargetAtTime(CARRIER * ratio, ctx.currentTime, 0.01);
-      modGain.gain.setTargetAtTime(index, ctx.currentTime, 0.01);
+    if (mo === 'fm') {
+      mod.frequency.setTargetAtTime(CARRIER * ra, ctx.currentTime, 0.01);
+      modGain.gain.setTargetAtTime(i, ctx.currentTime, 0.01);
     } else {
-      mod.frequency.setTargetAtTime(rate, ctx.currentTime, 0.01);
-      modGain.gain.setTargetAtTime(mode === 'tremolo' ? depth * 0.4 : depth, ctx.currentTime, 0.01);
+      mod.frequency.setTargetAtTime(r, ctx.currentTime, 0.01);
+      modGain.gain.setTargetAtTime(mo === 'tremolo' ? d * 0.4 : d, ctx.currentTime, 0.01);
     }
   });
 
