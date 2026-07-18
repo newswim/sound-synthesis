@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { masterVolumeStore } from '../audio/context';
 
   interface Props {
     step: number;
@@ -28,8 +29,17 @@
   {/if}
 
   {#if demo}
+    <div class="mt-6 flex items-center justify-end gap-2">
+      <label class="flex items-center gap-2 text-xs text-[var(--color-muted)] select-none">
+        Volume
+        <input type="range" min="0" max="1" step="0.01" bind:value={$masterVolumeStore} class="w-24" />
+      </label>
+      <span class="w-9 text-right font-mono text-xs text-[var(--color-muted)]">
+        {Math.round($masterVolumeStore * 100)}%
+      </span>
+    </div>
     <section
-      class="mt-6 rounded-xl border border-[var(--color-edge)] bg-[var(--color-panel)] p-5"
+      class="mt-2 rounded-xl border border-[var(--color-edge)] bg-[var(--color-panel)] p-5"
     >
       {@render demo()}
     </section>

@@ -2,6 +2,12 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Master volume placement — #31)
+- Moved master volume out of the (now-crowded) sidebar into LessonScaffold: one
+  compact `Volume` slider + % readout, right-aligned above every demo panel.
+  Binds `masterVolumeStore` directly, so it persists across lessons. Verified
+  RMS tracks the slider (0.052 @ 20% ↔ 0.255 @ 100%).
+
 ## 2026-07-18 (SEO pass — #29)
 - Added `humans.txt` (+ `rel="author"` link); ASCII-only (no charset header on .txt).
 - **Path routing** replaces hash routing (`/filters` etc.); legacy `#/` links
