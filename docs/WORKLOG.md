@@ -4,7 +4,7 @@ _Append-only. Newest at top. One short entry per work session._
 
 ## 2026-07-18 (Master volume placement — #31)
 - Moved master volume out of the (now-crowded) sidebar into LessonScaffold: one
-  compact `Master` slider + % readout, right-aligned above every demo panel.
+  compact `Volume` slider + % readout, right-aligned above every demo panel.
   Binds `masterVolumeStore` directly, so it persists across lessons. Verified
   RMS tracks the slider (0.052 @ 20% ↔ 0.255 @ 100%).
 

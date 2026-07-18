@@ -31,7 +31,7 @@
   {#if demo}
     <div class="mt-6 flex items-center justify-end gap-2">
       <label class="flex items-center gap-2 text-xs text-[var(--color-muted)] select-none">
-        Master
+        Volume
         <input type="range" min="0" max="1" step="0.01" bind:value={$masterVolumeStore} class="w-24" />
       </label>
       <span class="w-9 text-right font-mono text-xs text-[var(--color-muted)]">
