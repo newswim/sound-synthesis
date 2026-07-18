@@ -2,6 +2,15 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-07-18 · Signal Chain Lab: shared paraphonic chain + dual-path LFO routing
+Voices (osc + amp env only, per-voice filter wide open) feed one shared chain where
+the filter is a module like the effects. LFO routing is dual-path: **pitch** uses each
+voice's built-in LFO (per-voice AudioParams come and go with notes); cutoff/volume/
+delay-time patch a shared LFO into stable exposed AudioParams.
+**Why:** per-voice targets need per-voice modulators; node params don't. A single
+mechanism would mean tracking voice lifecycles from outside the Voice class.
+**Alt:** true polyphonic chain per voice (heavier, no shared-effect teaching value).
+
 ## 2026-07-18 · Sectioned curriculum: Basics / Shaping / Effects, each ending in a lab
 Lessons are grouped into sections in `lessons.ts`; the last lesson of each section is a
 lab that integrates that section's concepts (Wave Builder, Synth Lab, FX Rack). Slugs

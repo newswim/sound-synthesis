@@ -8,7 +8,9 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 - **Shipped and live** on Vercel at **synth.cool**; audio confirmed on desktop and iOS.
 - Merged today: #16 (live-reactive controls), #18 (Effects module + sectioned
   curriculum — Basics / Shaping / Effects, each ending in a lab).
-- In flight: #20 — Noise & percussion lesson (Shaping 4/5). PR open.
+- Merged: #20 (noise & percussion, Shaping 4/5).
+- In flight: #24 — Patching section + Lab: Signal Chain (semi-modular rack with
+  LFO destination routing). PR open. Unblocks #25 (free-patch playground).
 - Roadmap filed as issues #20–#26 (see BACKLOG).
 
 ## Done

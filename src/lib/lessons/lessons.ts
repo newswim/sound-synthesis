@@ -13,6 +13,7 @@ import LessonDistortion from '../../lessons/LessonDistortion.svelte';
 import LessonReverb from '../../lessons/LessonReverb.svelte';
 import LessonFxRack from '../../lessons/LessonFxRack.svelte';
 import LessonPercussion from '../../lessons/LessonPercussion.svelte';
+import LessonSignalChain from '../../lessons/LessonSignalChain.svelte';
 
 export interface LessonProps {
   step: number;
@@ -63,6 +64,12 @@ export const sections: Section[] = [
       { slug: 'distortion', title: 'Distortion', blurb: 'Clipping creates harmonics', component: LessonDistortion },
       { slug: 'reverb', title: 'Reverb', blurb: 'Rooms from noise', component: LessonReverb },
       { slug: 'fx-rack', title: 'FX Rack', blurb: 'Lab · chain the pedals', lab: true, component: LessonFxRack },
+    ],
+  },
+  {
+    title: 'Patching',
+    lessons: [
+      { slug: 'signal-chain', title: 'Signal Chain', blurb: 'Lab · route the modulation', lab: true, component: LessonSignalChain },
     ],
   },
 ];

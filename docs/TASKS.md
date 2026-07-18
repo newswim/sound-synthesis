@@ -39,6 +39,7 @@
 
 ## Content
 - [x] Noise & percussion lesson (noise.ts + drums.ts, Shaping 4/5) — #20
+- [x] Patching section + Lab: Signal Chain (FilterEffect, LFO destinations) — #24
 
 ## Effects module
 - [x] Sectioned curriculum (Basics / Shaping / Effects, labs per section)
