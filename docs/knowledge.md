@@ -2,7 +2,23 @@
 
 _Reusable findings so we don't rediscover them. Newest at top._
 
+## Svelte 5 runes
+- **$effect tracks only what a run actually reads.** A guarded body like
+  `if (node) node.freq = cutoff` with `node` null on the first run reads nothing →
+  the effect records zero deps and never reruns (sliders look dead until restart).
+  Same trap with `obj?.method(makeCfg())` — optional chaining skips the argument.
+  Fix: read the reactive values *before* the null guard.
+- **An $effect must not read + replace the same $state.** Lesson 6's rebuild effect
+  called stop()/start(), which read `analyser` and assigned a fresh one — the effect
+  retriggered itself until Svelte's max-update-depth guard killed the whole effect
+  tree (UI wedges, buttons dead). Wrap the action in `untrack()`.
+
 ## Web Audio gotchas
+- **AnalyserNode spectral floor:** the FFT window's sidelobe leakage from loud low
+  harmonics puts a ~-55 dB floor across all bins — filter attenuation below that is
+  invisible in `getFloatFrequencyData`. To verify filtering/vibrato programmatically,
+  use time-domain metrics instead (derivative RMS for brightness, zero-crossing
+  period for pitch).
 - **Autoplay policy:** an AudioContext starts `suspended`; must call `ctx.resume()`
   inside a user gesture (click/keydown) before sound plays.
 - **Exponential ramps:** `exponentialRampToValueAtTime` cannot target 0 and the

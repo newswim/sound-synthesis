@@ -52,6 +52,12 @@
     held?.stop();
     held = null;
   }
+  // Sustain/release edits apply to the note being held. makeCfg() runs before the
+  // held-null short-circuit so the effect always tracks the env sliders.
+  $effect(() => {
+    const c = makeCfg();
+    held?.update(c);
+  });
   onDestroy(() => held?.stop());
 </script>
 
