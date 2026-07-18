@@ -70,8 +70,51 @@ export class FeedbackDelay extends WetDry {
   set feedback(g: number) {
     this.fb.gain.setTargetAtTime(Math.min(g, 0.95), getAudioContext().currentTime, T);
   }
+  /** The delay-time AudioParam, exposed as a modulation target. */
+  get timeParam(): AudioParam {
+    return this.delay.delayTime;
+  }
   protected nodes(): AudioNode[] {
     return [...super.nodes(), this.delay, this.fb];
+  }
+}
+
+/**
+ * A biquad filter wrapped in the Effect interface so it can sit in a chain
+ * alongside the wet/dry units (no mix — a filter is inline by nature).
+ */
+export class FilterEffect implements Effect {
+  readonly input: GainNode;
+  readonly output: GainNode;
+  private biquad: BiquadFilterNode;
+
+  constructor(type: BiquadFilterType = 'lowpass', cutoff = 2200, resonance = 1) {
+    const ctx = getAudioContext();
+    this.input = ctx.createGain();
+    this.output = ctx.createGain();
+    this.biquad = ctx.createBiquadFilter();
+    this.biquad.type = type;
+    this.biquad.frequency.value = cutoff;
+    this.biquad.Q.value = resonance;
+    this.input.connect(this.biquad);
+    this.biquad.connect(this.output);
+  }
+
+  set cutoff(hz: number) {
+    this.biquad.frequency.setTargetAtTime(hz, getAudioContext().currentTime, T);
+  }
+  set resonance(q: number) {
+    this.biquad.Q.setTargetAtTime(q, getAudioContext().currentTime, T);
+  }
+  /** The cutoff AudioParam, exposed as a modulation target. */
+  get cutoffParam(): AudioParam {
+    return this.biquad.frequency;
+  }
+
+  dispose(): void {
+    this.input.disconnect();
+    this.biquad.disconnect();
+    this.output.disconnect();
   }
 }
 

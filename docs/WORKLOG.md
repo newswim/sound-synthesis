@@ -2,6 +2,18 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Signal Chain Lab — #24)
+- New **Patching** section (course finale; #25/#26 will join it) with Lab: Signal
+  Chain — a semi-modular synth: filter joins the chain as a module (`FilterEffect`),
+  five reorderable/bypassable slots, and an **LFO destination selector**
+  (pitch / cutoff / volume / delay time), MS-20 style.
+- Routing under the hood: pitch vibrato rides each voice's own LFO (already
+  live-updatable); the other targets patch a shared LFO's depth gain into exposed
+  AudioParams (`FilterEffect.cutoffParam`, `FeedbackDelay.timeParam`, rack gain).
+- Verified all four cables on one held note: cutoff sweep (brightness 2.3↔19.3),
+  tremolo (RMS 0.105↔0.227), vibrato (period 289↔410), delay warble (151↔374);
+  filter-before vs -after distortion audibly differs (51 vs 34); bypass live.
+
 ## 2026-07-18 (Noise & percussion — #20)
 - New `noise.ts` (cached white/pink buffers — Paul Kellet pink filter) and `drums.ts`
   (one-shot kick/snare/hat; params read at trigger time).
