@@ -2,6 +2,15 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Envelope lesson interactions — #35)
+- Try-this said "Hit Pluck" but the preset button only sets sliders (no sound);
+  copy rewritten around the real interactions.
+- Added **Latch note / Release** toggle (press-to-hold) — sweep sustain/release
+  while the note rings — and **hold-A keyboard trigger** (keydown = attack,
+  keyup = release), consistent with the piano lessons.
+- Verified: pluck dies while A held (sustain 0); pad swells + long tail; latch
+  survives stray key taps; sustain live while latched (0.034 ↔ 0.276 RMS).
+
 ## 2026-07-18 (Keyboard black keys — #33)
 - Black keys were filled #11151f — near-identical to the page background — so the
   keyboard read as white-keys-only and sharps looked missing. Now a distinct fill
