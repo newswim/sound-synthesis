@@ -23,6 +23,7 @@ ideas below the line are candidates not yet filed. Keep it terse._
 - #26 — [Feature] Sound-matching challenges (auto-scored via analyser)
 - #29 — [SEO] Real URLs, prerendered heads, sitemap, canonical fix
 - #31 — [UX] Master volume moved from sidebar into the lesson scaffold
+- #33 — [UX] Keyboard black keys: visible fill + note labels
 
 **Dependencies:** #5 → #4 (filter envelope must land first); #25 → #24 (semi-modular
 rack proves the routing UX before the cable canvas). All others are independent and

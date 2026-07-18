@@ -92,13 +92,17 @@
   <!-- black keys overlaid -->
   {#each keys.filter((k) => k.black) as k (k.midi)}
     <button
-      class="absolute top-0 h-24 rounded-b-md border border-black/40"
-      style="width:calc({100 / whiteCount}% * 0.62); left:calc({(k.whiteIndex / whiteCount) * 100}% - ({100 / whiteCount}% * 0.31)); background:{active.has(k.midi) ? 'var(--color-accent-2)' : '#11151f'}"
+      class="absolute top-0 h-24 rounded-b-md border border-black/60 shadow-[0_3px_6px_rgba(0,0,0,0.55)]"
+      style="width:calc({100 / whiteCount}% * 0.62); left:calc({(k.whiteIndex / whiteCount) * 100}% - ({100 / whiteCount}% * 0.31)); background:{active.has(k.midi) ? 'var(--color-accent-2)' : '#2a3147'}"
       onpointerdown={() => press(k.midi)}
       onpointerup={() => release(k.midi)}
       onpointerleave={() => release(k.midi)}
       aria-label={midiToName(k.midi)}
-    ></button>
+    >
+      <span class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] text-slate-400">
+        {midiToName(k.midi).replace(/\d+$/, '')}
+      </span>
+    </button>
   {/each}
 </div>
 <p class="mt-2 text-center text-xs text-[var(--color-muted)]">
