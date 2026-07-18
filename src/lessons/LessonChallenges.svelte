@@ -54,24 +54,39 @@
   let uAttack = $state(0.05);
   let uRelease = $state(0.3);
 
+  /** True when t is at least `minLog2` octaves (log₂ ratio) away from u. */
+  const farFrom = (t: number, u: number, minLog2: number) => Math.abs(Math.log2(t / u)) >= minLog2;
+
+  // Targets must start well clear of the slider's reset position, so an untouched
+  // "Check match" can never win: pitch ≥ 4 semitones, cutoff ≥ ⅔ octave (2× the
+  // match window), envelope times ≥ 2×, waveform ≠ the current pick.
   function newTarget() {
     matched = false;
     checked = false;
     feedback = [];
     if (current === 'pitch') {
-      let k = 0;
-      while (k === 0) k = Math.floor(Math.random() * 25) - 12; // ±12 semitones, never unison
-      tFreq = 440 * Math.pow(2, k / 12);
       uFreq = 440;
+      const k = (4 + Math.floor(Math.random() * 9)) * (Math.random() < 0.5 ? -1 : 1); // ±4..12 semitones
+      tFreq = 440 * Math.pow(2, k / 12);
     } else if (current === 'wave') {
       const options: Waveform[] = ['sine', 'square', 'sawtooth', 'triangle'];
-      tWave = options[Math.floor(Math.random() * options.length)];
+      do {
+        tWave = options[Math.floor(Math.random() * options.length)];
+      } while (tWave === uWave);
     } else if (current === 'cutoff') {
-      tCutoff = Math.round(logUniform(250, 6000));
       uCutoff = 2000;
+      do {
+        tCutoff = Math.round(logUniform(250, 6000));
+      } while (!farFrom(tCutoff, uCutoff, 2 / 3));
     } else {
-      tAttack = logUniform(0.005, 1);
-      tRelease = logUniform(0.08, 1.6);
+      uAttack = 0.05;
+      uRelease = 0.3;
+      do {
+        tAttack = logUniform(0.005, 1);
+      } while (!farFrom(tAttack, uAttack, 1));
+      do {
+        tRelease = logUniform(0.08, 1.6);
+      } while (!farFrom(tRelease, uRelease, 1));
     }
   }
   function select(id: ChId) {
