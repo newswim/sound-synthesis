@@ -8,7 +8,7 @@
       name="description"
       content="An interactive, step-by-step introduction to the fundamentals of sound synthesis: waveforms, envelopes, filters, modulation and more."
     />
-    <link rel="canonical" href="https://synth.cool/" />
+    <link rel="canonical" href="https://www.synth.cool/" />
     <meta name="theme-color" content="#0a0a1f" />
 
     <!-- Icons + PWA manifest -->
@@ -25,7 +25,7 @@
       property="og:description"
       content="An interactive, step-by-step introduction to the fundamentals of sound synthesis: waveforms, envelopes, filters, modulation and more."
     />
-    <meta property="og:url" content="https://synth.cool/" />
+    <meta property="og:url" content="https://www.synth.cool/" />
     <meta property="og:image" content="https://synth.cool/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -42,6 +42,12 @@
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: sans-serif">
+        Synth School is an interactive sound-synthesis course built on the Web Audio API — it
+        needs JavaScript to make sound. Please enable JavaScript to continue.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

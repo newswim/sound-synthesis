@@ -2,6 +2,19 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (SEO pass — #29)
+- **Path routing** replaces hash routing (`/filters` etc.); legacy `#/` links
+  redirect client-side; unknown slugs normalize to `/`; sidebar items are real
+  `<a>` links; head (title/description/canonical) updates on client nav.
+- **Prerender** (`scripts/prerender.mjs`, runs post-build): stamps per-lesson
+  `dist/<slug>/index.html` with unique head + LearningResource JSON-LD, adds
+  WebSite+Course JSON-LD to the homepage, emits `sitemap.xml`. Vercel serves the
+  static files before the SPA rewrite — no SSR.
+- Lesson metadata (+ new per-lesson descriptions) extracted to `meta.json`,
+  shared by app, prerenderer, and sitemap. Added `robots.txt`.
+- **Canonical host fixed**: everything now on `https://www.synth.cool` (the apex
+  307s to www, so the old canonical pointed at a redirect).
+
 ## 2026-07-18 (Signal Chain Lab — #24)
 - New **Patching** section (course finale; #25/#26 will join it) with Lab: Signal
   Chain — a semi-modular synth: filter joins the chain as a module (`FilterEffect`),

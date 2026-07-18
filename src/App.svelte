@@ -1,27 +1,47 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { lessons, sections, indexForSlug } from './lib/lessons/lessons';
+  import { lessons, sections, indexForSlug, SITE } from './lib/lessons/lessons';
   import { masterVolumeStore } from './lib/audio/context';
 
   let current = $state(0);
   let menuOpen = $state(false);
 
-  function syncFromHash() {
-    const slug = location.hash.replace(/^#\/?/, '');
+  function syncFromPath() {
+    const slug = decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g, '');
+    if (slug && lessons.every((l) => l.slug !== slug)) {
+      // Unknown path: normalize to home so bad URLs don't masquerade as pages.
+      history.replaceState(null, '', '/');
+    }
     current = indexForSlug(slug);
   }
   function go(i: number) {
     current = Math.max(0, Math.min(lessons.length - 1, i));
-    location.hash = `/${lessons[current].slug}`;
+    history.pushState(null, '', current === 0 ? '/' : `/${lessons[current].slug}`);
     menuOpen = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   onMount(() => {
-    if (!location.hash) location.hash = `/${lessons[0].slug}`;
-    else syncFromHash();
-    window.addEventListener('hashchange', syncFromHash);
-    return () => window.removeEventListener('hashchange', syncFromHash);
+    // Legacy hash links (#/filters) → real paths (/filters).
+    const legacy = location.hash.replace(/^#\/?/, '');
+    if (legacy) history.replaceState(null, '', `/${legacy}`);
+    syncFromPath();
+    window.addEventListener('popstate', syncFromPath);
+    return () => window.removeEventListener('popstate', syncFromPath);
+  });
+
+  // Keep the head in sync on client-side navigation (prerendered pages seed
+  // the same values for crawlers; see scripts/prerender.mjs).
+  $effect(() => {
+    const l = lessons[current];
+    const home = current === 0;
+    document.title = home ? SITE.title : `${l.title} · ${SITE.name}`;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', home ? SITE.description : l.description);
+    document
+      .querySelector('link[rel="canonical"]')
+      ?.setAttribute('href', home ? `${SITE.baseUrl}/` : `${SITE.baseUrl}/${l.slug}`);
   });
 
   const Active = $derived(lessons[current].component);
@@ -48,8 +68,12 @@
           </p>
           {#each sec.lessons as lesson, si (lesson.slug)}
             {@const i = indexForSlug(lesson.slug)}
-            <button
-              onclick={() => go(i)}
+            <a
+              href={i === 0 ? '/' : `/${lesson.slug}`}
+              onclick={(e) => {
+                e.preventDefault();
+                go(i);
+              }}
               class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition"
               style={i === current ? 'background:var(--color-panel-2)' : ''}
             >
@@ -68,7 +92,7 @@
                 </span>
                 <span class="block text-xs text-[var(--color-muted)]">{lesson.blurb}</span>
               </span>
-            </button>
+            </a>
           {/each}
         {/each}
       </nav>

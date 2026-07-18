@@ -2,6 +2,14 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-07-18 · SEO via post-build prerender, not SSR
+Path routing + a script that stamps the built `index.html` per lesson (unique head,
+JSON-LD, sitemap). The audio engine touches browser APIs at component init, so real
+SSR would need heavy refactoring for zero extra benefit — crawlers get unique heads
+from static files and full content from JS rendering.
+**Why:** all of the SEO value at ~100 lines, no new deps, no runtime change.
+**Alt:** SvelteKit/SSR migration (heavy), puppeteer prerender (heavy dep, slow builds).
+
 ## 2026-07-18 · Signal Chain Lab: shared paraphonic chain + dual-path LFO routing
 Voices (osc + amp env only, per-voice filter wide open) feed one shared chain where
 the filter is a module like the effects. LFO routing is dual-path: **pitch** uses each
