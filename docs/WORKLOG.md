@@ -2,6 +2,15 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Noise & percussion — #20)
+- New `noise.ts` (cached white/pink buffers — Paul Kellet pink filter) and `drums.ts`
+  (one-shot kick/snare/hat; params read at trigger time).
+- New Shaping lesson "Noise & percussion" (slug `percussion`, before Synth Lab):
+  white/pink explorer + Z/X/C/V drum pads with per-drum sliders. The kick teaches
+  envelope→pitch routing (sine dive).
+- Verified: pink tilts low-vs-high band +8.5 dB (white −0.4); closed vs open hat
+  tails distinct; kick pitch slider audibly changes hits.
+
 ## 2026-07-18 (Effects module + sectioned curriculum)
 - Curriculum now has sections — Basics / Shaping / Effects — each ending in a **lab**
   (Wave Builder, Synth Lab, FX Rack). Grouped sidebar, per-section numbering, LAB

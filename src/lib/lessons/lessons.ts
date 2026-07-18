@@ -12,6 +12,7 @@ import LessonChorus from '../../lessons/LessonChorus.svelte';
 import LessonDistortion from '../../lessons/LessonDistortion.svelte';
 import LessonReverb from '../../lessons/LessonReverb.svelte';
 import LessonFxRack from '../../lessons/LessonFxRack.svelte';
+import LessonPercussion from '../../lessons/LessonPercussion.svelte';
 
 export interface LessonProps {
   step: number;
@@ -50,6 +51,7 @@ export const sections: Section[] = [
       { slug: 'envelopes', title: 'Envelopes (ADSR)', blurb: 'Shaping a note in time', component: Lesson4Envelopes },
       { slug: 'filters', title: 'Filters & EQ', blurb: 'Cutoff & resonance', component: Lesson5Filters },
       { slug: 'modulation', title: 'Modulation', blurb: 'LFO, vibrato & FM', component: Lesson6Modulation },
+      { slug: 'percussion', title: 'Noise & percussion', blurb: 'Drums from static', component: LessonPercussion },
       { slug: 'synth-lab', title: 'Synth Lab', blurb: 'Lab · the subtractive chain', lab: true, component: Lesson8SynthLab },
     ],
   },
