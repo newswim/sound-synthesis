@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { onDestroy } from 'svelte';
+  import { onDestroy, onMount } from 'svelte';
   import LessonScaffold from '../lib/components/LessonScaffold.svelte';
   import Slider from '../lib/components/Slider.svelte';
+  import PlayButton from '../lib/components/PlayButton.svelte';
   import EnvelopeGraph from '../lib/components/EnvelopeGraph.svelte';
   import { unlockAudio } from '../lib/audio/context';
   import { Voice, type VoiceConfig } from '../lib/audio/voice';
@@ -43,6 +44,8 @@
     };
   }
 
+  let latched = $state(false);
+
   async function down() {
     await unlockAudio();
     if (held) return;
@@ -50,8 +53,18 @@
     held.start();
   }
   function up() {
+    if (latched) return; // a latched note releases only via the toggle
     held?.stop();
     held = null;
+  }
+  function toggleLatch(p: boolean) {
+    latched = p;
+    if (p) {
+      void down();
+    } else {
+      held?.stop();
+      held = null;
+    }
   }
   // Sustain/release edits apply to the note being held. makeCfg() runs before the
   // held-null short-circuit so the effect always tracks the env sliders.
@@ -59,6 +72,24 @@
     const c = makeCfg();
     held?.update(c);
   });
+
+  onMount(() => {
+    function kd(e: KeyboardEvent) {
+      if (e.repeat || e.key.toLowerCase() !== 'a') return;
+      void down();
+    }
+    function ku(e: KeyboardEvent) {
+      if (e.key.toLowerCase() !== 'a') return;
+      up();
+    }
+    window.addEventListener('keydown', kd);
+    window.addEventListener('keyup', ku);
+    return () => {
+      window.removeEventListener('keydown', kd);
+      window.removeEventListener('keyup', ku);
+    };
+  });
+
   onDestroy(() => held?.stop());
 </script>
 
@@ -95,17 +126,24 @@
       >
         Hold to play
       </button>
+      <PlayButton playing={latched} onToggle={toggleLatch} labelOff="Latch note" labelOn="Release" />
       <button class="rounded-lg border border-[var(--color-edge)] px-3 py-2 text-sm text-[var(--color-muted)]" onclick={presetPluck}>Pluck preset</button>
       <button class="rounded-lg border border-[var(--color-edge)] px-3 py-2 text-sm text-[var(--color-muted)]" onclick={presetPad}>Pad preset</button>
     </div>
+    <p class="mt-2 text-xs text-[var(--color-muted)]">
+      Or hold <span class="font-mono">A</span> on your keyboard — press for the attack, release for
+      the release. <strong>Latch note</strong> keeps it sounding while you tweak the sliders.
+    </p>
   {/snippet}
 
   {#snippet tryThis()}
     <p>
-      Hit <strong>Pluck</strong>: tiny attack, zero sustain — the note fires and dies even if you
-      keep holding. Now <strong>Pad</strong>: long attack and release — hold the pad and it swells
-      in, let go and it fades slowly. Same oscillator, completely different instrument, just from
-      the envelope.
+      Click <strong>Pluck preset</strong>, then hold <span class="font-mono">A</span>: tiny attack,
+      zero sustain — the note fires and dies even while you hold. Now <strong>Pad preset</strong>:
+      long attack and release — the note swells in, and fades slowly after you let go. Then
+      <strong>Latch note</strong> and drag <strong>Sustain</strong> while it rings — the level
+      follows your finger. Same oscillator, completely different instrument, just from the
+      envelope.
     </p>
   {/snippet}
 </LessonScaffold>
