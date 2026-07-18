@@ -12,8 +12,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   const tone = new Tone();
   let playing = $state(false);
@@ -34,7 +35,7 @@
   onDestroy(() => tone.dispose());
 </script>
 
-<LessonScaffold {step} {total} title="Waveforms & timbre" subtitle="Same pitch, different character — the wave's shape is its tone colour.">
+<LessonScaffold {step} {total} {section} title="Waveforms & timbre" subtitle="Same pitch, different character — the wave's shape is its tone colour.">
   {#snippet intro()}
     <p>
       A sine is pure, but most sounds are richer. The <strong>shape</strong> of a repeating wave

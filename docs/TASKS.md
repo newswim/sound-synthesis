@@ -37,6 +37,12 @@
 ## Polish
 - [x] Live-reactive controls on held notes (lessons 3/4/8 via `Voice.update()`)
 
+## Effects module
+- [x] Sectioned curriculum (Basics / Shaping / Effects, labs per section)
+- [x] effects.ts (FeedbackDelay, Chorus, Distortion, Reverb)
+- [x] Lessons: delay, chorus/flanger, distortion, reverb
+- [x] Lab: FX Rack (reorderable pedalboard)
+
 ## Ship
 - [x] build + preview clean
 - [x] Deploy to Vercel (live; custom domain synth.cool)

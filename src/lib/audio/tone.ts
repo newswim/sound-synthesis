@@ -14,14 +14,14 @@ export class Tone {
   private _type: Waveform = 'sine';
   private _wave: PeriodicWave | null = null;
 
-  constructor() {
+  constructor(destination: AudioNode = getMasterBus()) {
     const ctx = getAudioContext();
     this.gain = ctx.createGain();
     this.gain.gain.value = 0;
     this.analyser = ctx.createAnalyser();
     this.analyser.fftSize = 2048;
     this.gain.connect(this.analyser);
-    this.analyser.connect(getMasterBus());
+    this.analyser.connect(destination);
   }
 
   get playing(): boolean {

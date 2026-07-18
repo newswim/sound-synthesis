@@ -10,8 +10,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   let attack = $state(0.01);
   let decay = $state(0.2);
@@ -61,7 +62,7 @@
   onDestroy(() => held?.stop());
 </script>
 
-<LessonScaffold {step} {total} title="Envelopes (ADSR)" subtitle="A note isn't instant — its loudness has a life story over time.">
+<LessonScaffold {step} {total} {section} title="Envelopes (ADSR)" subtitle="A note isn't instant — its loudness has a life story over time.">
   {#snippet intro()}
     <p>
       Real notes <strong>evolve</strong>. A plucked string snaps in and rings out; a bowed pad

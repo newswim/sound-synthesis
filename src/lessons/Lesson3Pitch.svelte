@@ -9,8 +9,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   let wave = $state<Waveform>('triangle');
   let last = $state<{ midi: number } | null>(null);
@@ -59,7 +60,7 @@
   );
 </script>
 
-<LessonScaffold {step} {total} title="Pitch & frequency" subtitle="From hertz to musical notes — and why octaves feel like 'the same note, higher'.">
+<LessonScaffold {step} {total} {section} title="Pitch & frequency" subtitle="From hertz to musical notes — and why octaves feel like 'the same note, higher'.">
   {#snippet intro()}
     <p>
       Musicians name pitches with letters (C, D, E…) but a synth thinks in <strong>hertz</strong>.

@@ -10,8 +10,9 @@
   interface Props {
     step: number;
     total: number;
+    section: string;
   }
-  let { step, total }: Props = $props();
+  let { step, total, section }: Props = $props();
 
   type Mode = 'vibrato' | 'tremolo' | 'fm';
   const CARRIER = 220;
@@ -119,7 +120,7 @@
   ];
 </script>
 
-<LessonScaffold {step} {total} title="Modulation" subtitle="Use one wave to wiggle another — slow wiggles add motion, fast ones invent new tones.">
+<LessonScaffold {step} {total} {section} title="Modulation" subtitle="Use one wave to wiggle another — slow wiggles add motion, fast ones invent new tones.">
   {#snippet intro()}
     <p>
       <strong>Modulation</strong> means using one signal to control a parameter of another. The

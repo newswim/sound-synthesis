@@ -4,18 +4,19 @@
   interface Props {
     step: number;
     total: number;
+    section?: string;
     title: string;
     subtitle?: string;
     intro?: Snippet;
     demo?: Snippet;
     tryThis?: Snippet;
   }
-  let { step, total, title, subtitle, intro, demo, tryThis }: Props = $props();
+  let { step, total, section, title, subtitle, intro, demo, tryThis }: Props = $props();
 </script>
 
 <article class="mx-auto max-w-3xl px-5 py-8">
   <p class="mb-1 font-mono text-xs tracking-widest text-[var(--color-accent)] uppercase">
-    Lesson {step} / {total}
+    {section ? `${section} · ` : ''}{step} / {total}
   </p>
   <h1 class="text-3xl font-bold text-[var(--color-ink)]">{title}</h1>
   {#if subtitle}

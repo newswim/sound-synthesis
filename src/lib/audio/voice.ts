@@ -29,7 +29,7 @@ export class Voice {
   private sustainAt = 0;
   readonly midi: number;
 
-  constructor(midi: number, cfg: VoiceConfig) {
+  constructor(midi: number, cfg: VoiceConfig, destination: AudioNode = getMasterBus()) {
     const ctx = getAudioContext();
     this.midi = midi;
     this.cfg = cfg;
@@ -54,7 +54,7 @@ export class Voice {
 
     this.osc.connect(this.filter);
     this.filter.connect(this.amp);
-    this.amp.connect(getMasterBus());
+    this.amp.connect(destination);
   }
 
   start(velocity = 1): void {
