@@ -6,9 +6,10 @@ _Mutable snapshot of where the project is. Keep it short — overwrite, don't ap
 
 ## Now
 - **Shipped and live** on Vercel at **synth.cool**; audio confirmed on desktop and iOS.
-- #16 merged (PR #17): controls modulate sounding audio everywhere.
-- In flight: #18 — Effects module + sectioned curriculum (Basics / Shaping / Effects,
-  each ending in a lab). Four effects lessons + Lab: FX Rack. PR open.
+- Merged today: #16 (live-reactive controls), #18 (Effects module + sectioned
+  curriculum — Basics / Shaping / Effects, each ending in a lab).
+- In flight: #20 — Noise & percussion lesson (Shaping 4/5). PR open.
+- Roadmap filed as issues #20–#26 (see BACKLOG).
 
 ## Done
 - 13 lessons across 3 sections + audio engine (incl. `effects.ts`) + components + shell.
