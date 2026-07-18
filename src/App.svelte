@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { lessons, sections, indexForSlug, SITE } from './lib/lessons/lessons';
-  import { masterVolumeStore } from './lib/audio/context';
 
   let current = $state(0);
   let menuOpen = $state(false);
@@ -45,8 +44,6 @@
   });
 
   const Active = $derived(lessons[current].component);
-  let volume = $state(0.7);
-  $effect(() => masterVolumeStore.set(volume));
 </script>
 
 <div class="flex min-h-full">
@@ -96,14 +93,6 @@
           {/each}
         {/each}
       </nav>
-      <div class="mt-4 border-t border-[var(--color-edge)] px-2 pt-4">
-        <label class="block">
-          <span class="mb-1 flex justify-between text-xs text-[var(--color-muted)]">
-            <span>Master volume</span><span class="font-mono">{Math.round(volume * 100)}%</span>
-          </span>
-          <input type="range" min="0" max="1" step="0.01" bind:value={volume} class="w-full" />
-        </label>
-      </div>
     </div>
   </aside>
 
