@@ -35,6 +35,7 @@ something playable, building toward a semi-modular synth you patch yourself.
 
 ### Patching
 1. [**Lab: Signal Chain**](https://www.synth.cool/signal-chain) — a semi-modular synth: reorder the chain and patch the LFO to pitch, cutoff, volume, or delay time
+2. [Sound Match](https://www.synth.cool/challenges) — ear-training challenges: recreate hidden patches by pitch, waveform, filter, and envelope
 
 ## Quick start
 

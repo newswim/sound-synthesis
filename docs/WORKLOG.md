@@ -2,6 +2,17 @@
 
 _Append-only. Newest at top. One short entry per work session._
 
+## 2026-07-18 (Sound Match challenges — #26)
+- New Patching page "Sound Match" (slug `challenges`): four ear-training
+  challenges — pitch (±25 cents), waveform (identify), filter cutoff (±⅓ octave),
+  envelope A/R (±log₂ 0.58) — with A/B target/yours playback, directional hints,
+  randomized replayable targets, and localStorage progress.
+- Scoring compares configs in ear-units (cents/octaves/log-time) — we run both
+  synths, so no analyser round-trip (see decisions.md).
+- Verified by solving all four via audio measurement: pitch heard 494 Hz →
+  matched; waveform identified by brightness A/B; cutoff via 4-step search;
+  envelope hints converge in 3 checks; ✓ chips persist across reload.
+
 ## 2026-07-18 (Envelope lesson interactions — #35)
 - Try-this said "Hit Pluck" but the preset button only sets sliders (no sound);
   copy rewritten around the real interactions.

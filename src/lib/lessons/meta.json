@@ -115,6 +115,12 @@
           "blurb": "Lab · route the modulation",
           "lab": true,
           "description": "A semi-modular synth in the browser: reorder the signal chain and patch an LFO to pitch, cutoff, volume or delay time."
+        },
+        {
+          "slug": "challenges",
+          "title": "Sound Match",
+          "blurb": "Practice · train your ears",
+          "description": "Ear-training challenges: listen to a hidden synth patch and recreate it by ear — pitch, waveform, filter cutoff and envelope — with directional hints as you go."
         }
       ]
     }

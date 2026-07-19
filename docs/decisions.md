@@ -2,6 +2,13 @@
 
 _ADR-lite. Newest at top. Format: date · decision · why · alternatives._
 
+## 2026-07-18 · Challenge scoring in config space, not analyser space
+Sound Match scores by comparing the learner's parameters to the hidden target's in
+ear-relevant units (cents, octaves, log-time) rather than comparing rendered audio.
+**Why:** both patches run the same synth, so config distance ≡ audible distance,
+deterministically — no FFT-leakage or timing noise. **Alt:** analyser-metric
+comparison (needed only if targets were external audio, e.g. "match this sample").
+
 ## 2026-07-18 · SEO via post-build prerender, not SSR
 Path routing + a script that stamps the built `index.html` per lesson (unique head,
 JSON-LD, sitemap). The audio engine touches browser APIs at component init, so real

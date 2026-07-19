@@ -15,6 +15,7 @@ import LessonReverb from '../../lessons/LessonReverb.svelte';
 import LessonFxRack from '../../lessons/LessonFxRack.svelte';
 import LessonPercussion from '../../lessons/LessonPercussion.svelte';
 import LessonSignalChain from '../../lessons/LessonSignalChain.svelte';
+import LessonChallenges from '../../lessons/LessonChallenges.svelte';
 
 export interface LessonProps {
   step: number;
@@ -61,6 +62,7 @@ const COMPONENTS: Record<string, Component<LessonProps>> = {
   reverb: LessonReverb,
   'fx-rack': LessonFxRack,
   'signal-chain': LessonSignalChain,
+  challenges: LessonChallenges,
 };
 
 /** Curriculum: titles/blurbs/descriptions live in meta.json (shared with the
