@@ -93,18 +93,20 @@
   onDestroy(() => held?.stop());
 </script>
 
-<LessonScaffold {step} {total} {section} title="Envelopes (ADSR)" subtitle="A note isn't instant — its loudness has a life story over time.">
+<LessonScaffold {step} {total} {section} title="Envelopes (ADSR)" subtitle="Every note has a life story: how it arrives, how it stays, and how it leaves.">
   {#snippet intro()}
     <p>
-      Real notes <strong>evolve</strong>. A plucked string snaps in and rings out; a bowed pad
-      swells in slowly. An <strong>envelope</strong> is the curve that shapes a parameter (usually
-      loudness) from the moment a key is pressed to after it's released.
+      Pluck a guitar string and the sound snaps in, then slowly dies away. Bow a cello and it
+      swells in instead. Same idea — a note's loudness has a shape in time — told two different
+      ways. An <strong>envelope</strong> is that shape: the curve a note follows from the moment
+      you press a key until after you let it go.
     </p>
     <p>
-      The classic shape has four stages — <strong>ADSR</strong>:
-      <strong>Attack</strong> (time to rise to full), <strong>Decay</strong> (fall to the sustain
-      level), <strong>Sustain</strong> (the level held while the key is down — a level, not a time),
-      and <strong>Release</strong> (fade to silence after you let go).
+      The classic envelope has four stages, named <strong>ADSR</strong>. Attack is how long the
+      note takes to reach full volume. Decay is how long it takes to fall from there to the
+      sustain level. Sustain is the level it holds while the key stays down — the only one of the
+      four that's a level, not a time. Release is how long it takes to fade to silence after you
+      let go.
     </p>
   {/snippet}
 
@@ -138,12 +140,11 @@
 
   {#snippet tryThis()}
     <p>
-      Click <strong>Pluck preset</strong>, then hold <span class="font-mono">A</span>: tiny attack,
-      zero sustain — the note fires and dies even while you hold. Now <strong>Pad preset</strong>:
-      long attack and release — the note swells in, and fades slowly after you let go. Then
-      <strong>Latch note</strong> and drag <strong>Sustain</strong> while it rings — the level
-      follows your finger. Same oscillator, completely different instrument, just from the
-      envelope.
+      Click <strong>Pluck preset</strong> and hold <span class="font-mono">A</span>. Tiny attack,
+      zero sustain: the note fires and is gone, even though you're still holding the key. Switch
+      to <strong>Pad preset</strong> and hold A again — this time it swells in, and takes its time
+      leaving. Then try <strong>Latch note</strong> and drag the sustain slider while the note
+      plays. Everything you just heard came from one oscillator; only the envelope changed.
     </p>
   {/snippet}
 </LessonScaffold>

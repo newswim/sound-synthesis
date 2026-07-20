@@ -143,18 +143,18 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Lab: FX Rack" subtitle="Every effect from this section on one pedalboard — and the order of the pedals is part of the sound.">
+<LessonScaffold {step} {total} {section} title="Lab: FX Rack" subtitle="Four effects, one synth, and a decision: what order?">
   {#snippet intro()}
     <p>
-      A guitarist's pedalboard is a <strong>signal chain</strong>: the instrument feeds the first
-      pedal, its output feeds the next, and so on to the amp. Here your synth feeds the four
-      effects you just learned. Switch pedals on and off, tweak them <em>while notes ring</em>, and
-      — the real lesson — <strong>reorder them</strong>.
+      A guitarist's pedalboard is a <strong>signal chain</strong>: instrument into the first
+      pedal, that pedal into the next, and so on down the line. Here your synth feeds the four
+      effects you just learned. Switch them on and off, tweak them while notes ring — and then
+      try reordering them, because that's the real experiment.
     </p>
     <p>
-      Order matters because effects don't commute: distorting a reverb-washed sound crushes the
-      whole room into fizz, while reverberating a distorted sound puts a crunchy guitar <em>in</em>
-      a room. There is no "correct" order — only choices with different sounds.
+      Order matters. Distorting a reverb crushes the whole room into fizz. Reverberating a
+      distortion puts a crunchy guitar <em>inside</em> a room. Neither is wrong; they're simply
+      different instruments, made from the same parts.
     </p>
   {/snippet}
 
@@ -225,12 +225,10 @@
 
   {#snippet tryThis()}
     <p>
-      Enable <strong>distortion and reverb</strong> and play a low note. Now move reverb
-      <em>before</em> distortion — same two pedals, completely different animal. Build a dub echo:
-      delay on, feedback 0.8, staccato notes, then ride the delay <strong>time</strong> while it
-      regenerates. Finish with a lush pad: chorus + big reverb, saw chords, no distortion. You've
-      gone from "what does each box do" to <strong>routing signals on purpose</strong> — which is
-      what synthesis actually is.
+      Turn on distortion and reverb and play a low note. Now move reverb ahead of distortion and
+      play it again — same two pedals, very different animal. Next, a dub echo: delay on, feedback
+      at 0.8, short stabby notes, and ride the time slider while it repeats. Or go gentle: chorus
+      into a big reverb, saw chords, nothing else.
     </p>
   {/snippet}
 </LessonScaffold>

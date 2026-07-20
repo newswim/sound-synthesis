@@ -78,18 +78,20 @@
   onDestroy(stop);
 </script>
 
-<LessonScaffold {step} {total} {section} title="Filters & EQ" subtitle="Carve away harmonics to sculpt a bright wave into the tone you want.">
+<LessonScaffold {step} {total} {section} title="Filters & EQ" subtitle="You already know what a filter sounds like — it sounds like the room next door.">
   {#snippet intro()}
     <p>
-      We start with a harmonic-rich saw, then <strong>subtract</strong> from it. A
-      <strong>filter</strong> lets some frequencies through and attenuates others. This
-      "subtractive" approach is the heart of most classic synths.
+      Music playing in the next room sounds "muffled" and "dull". That's a filter at work: the
+      wall lets the low frequencies through and blocks the high ones. Open the door and the sound
+      turns "bright" again. A <strong>filter</strong> is that wall, with a handle you can turn.
     </p>
     <p>
-      A <strong>low-pass</strong> keeps lows and rolls off highs (darker, the most common).
-      A <strong>high-pass</strong> does the opposite (thinner). A <strong>band-pass</strong> keeps
-      a slice around the cutoff. The <strong>cutoff</strong> is where it starts acting;
-      <strong>resonance</strong> (Q) boosts a peak right at the cutoff — that vocal "wah".
+      The waveforms lesson ended with a promise: synths start bright and carve harmonics away.
+      This is that carving tool. A <strong>low-pass</strong> filter keeps the lows and rolls off
+      the highs. A <strong>high-pass</strong> does the opposite. A <strong>band-pass</strong>
+      keeps only a slice in the middle. The <strong>cutoff</strong> sets where the wall begins,
+      and <strong>resonance</strong> boosts a narrow peak right at the cutoff — the vocal "wah"
+      you'll recognize the moment you hear it.
     </p>
   {/snippet}
 
@@ -118,11 +120,10 @@
 
   {#snippet tryThis()}
     <p>
-      Play the saw and slowly sweep <strong>cutoff</strong> down on a low-pass — hear it go from
-      bright and buzzy to dark and muffled as harmonics are removed. Now crank
-      <strong>resonance</strong> and sweep again: that whistling peak riding the cutoff is the
-      sound of a thousand techno records. The left graph shows the filter's shape; the right shows
-      which harmonics actually survive.
+      Play the saw, then drag the cutoff down slowly and just listen. Bright and buzzy turns dark
+      and muffled as harmonics disappear. Now raise the resonance and sweep again — that whistling
+      edge riding the cutoff is one of the most recognizable sounds in electronic music. The left
+      graph is the filter's shape; the right shows which harmonics survive it.
     </p>
   {/snippet}
 </LessonScaffold>

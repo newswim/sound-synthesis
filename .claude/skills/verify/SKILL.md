@@ -39,3 +39,9 @@ description: Build, launch, and behaviorally verify Synth School audio changes i
 - The user may be interacting with the main preview tab; run measurements in a
   fresh tab (`tabs_create`) as one atomic async script assigning to `window.__result`,
   then poll it — the JS tool does not await promises.
+- **Background-tab timer throttling**: if the pane isn't foregrounded, `setTimeout`
+  can be throttled to ~1/min, making wait-loop scripts look hung. For DOM-only
+  scripts (clicks + reads, no audio timing), wait on microtasks instead — Svelte 5
+  flushes on microtask: `for (let i = 0; i < 6; i++) await Promise.resolve();`.
+  Audio measurements genuinely need wall-clock time; keep those scripts short and
+  screenshot/interact first so the tab stays active.

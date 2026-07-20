@@ -67,19 +67,21 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Chorus & flanger" subtitle="A delay too short to hear as an echo, wobbled by an LFO — instant motion.">
+<LessonScaffold {step} {total} {section} title="Chorus & flanger" subtitle="One short delay plus one slow LFO makes a whole family of effects.">
   {#snippet intro()}
     <p>
-      Shrink a delay below ~30 ms and you stop hearing an echo — the copy fuses with the original.
-      Now point an <strong>LFO</strong> (Shaping, remember?) at the <em>delay time</em>: the copy
-      drifts slightly sharp and flat as the delay stretches and shrinks, like a second player who
-      can't quite stay in tune. That shimmer is <strong>chorus</strong>.
+      Make a delay shorter than about 30 milliseconds and something odd happens: you stop hearing
+      an echo. The copy fuses with the original into one thicker sound. Now point an LFO at the
+      <em>delay time</em>. The copy drifts slightly sharp and flat as the delay stretches and
+      shrinks, like a second player who can't quite hold the tuning. That shimmer is
+      <strong>chorus</strong> — and it's why a choir sounds richer than one singer: nobody is
+      perfectly in tune with anybody else.
     </p>
     <p>
-      Make the base delay <em>very</em> short (1–5 ms) and add <strong>feedback</strong>, and the
-      copy interferes with the original — some frequencies cancel, others reinforce, in a moving
-      comb pattern you can see in the spectrum. That jet-engine sweep is a <strong>flanger</strong>.
-      Same circuit, different settings.
+      Shrink the delay further, down to a few milliseconds, and add feedback. Now the copy
+      interferes with the original: some frequencies cancel, others pile up, in a comb pattern
+      that crawls as the LFO moves. That sweep is a <strong>flanger</strong>. Same circuit,
+      different settings.
     </p>
   {/snippet}
 
@@ -104,11 +106,10 @@
 
   {#snippet tryThis()}
     <p>
-      Start from the <strong>Chorus preset</strong> and set depth to 0 — the shimmer dies; that's
-      how much work the LFO is doing. Switch to the <strong>Flanger preset</strong> and watch the
-      spectrum: the comb's notches crawl up and down as the LFO sweeps. This lesson is modulation
-      routing in disguise — the same LFO you pointed at pitch and volume before, now pointed at a
-      delay line.
+      Load the chorus preset, then set the depth to zero and listen to the shimmer die — that's
+      how much work the LFO was doing. Load the flanger preset and watch the spectrum while you
+      listen: the notches sweep in time with the LFO. If this feels familiar, it should. It's the
+      modulation lesson again, pointed at a new target.
     </p>
   {/snippet}
 </LessonScaffold>

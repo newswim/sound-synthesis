@@ -60,18 +60,17 @@
   );
 </script>
 
-<LessonScaffold {step} {total} {section} title="Pitch & frequency" subtitle="From hertz to musical notes — and why octaves feel like 'the same note, higher'.">
+<LessonScaffold {step} {total} {section} title="Pitch & frequency" subtitle="How note names map onto frequencies, and why octaves rhyme.">
   {#snippet intro()}
     <p>
-      Musicians name pitches with letters (C, D, E…) but a synth thinks in <strong>hertz</strong>.
-      The bridge between them is simple: each step up the keyboard multiplies the frequency by a
-      fixed ratio. Twelve of those steps — one <strong>octave</strong> — exactly
-      <strong>double</strong> the frequency.
+      Musicians say C, D, E. A synth says 261.6 Hz. The bridge between the two is simple: each
+      step up the keyboard multiplies the frequency by the same small ratio, and twelve steps —
+      one <strong>octave</strong> — exactly doubles it.
     </p>
     <p>
-      The reference everyone tunes to is <strong>A4 = 440 Hz</strong>. So A5 is 880 Hz, A3 is
-      220 Hz. Because the relationship is multiplicative, the same musical interval covers a bigger
-      span of hertz the higher you go.
+      The note everyone tunes to is A4, at 440 Hz. One octave up, A5 is 880. One octave down, A3
+      is 220. Because pitches multiply instead of adding, the same musical distance covers more
+      hertz the higher you go.
     </p>
   {/snippet}
 
@@ -85,9 +84,10 @@
 
   {#snippet tryThis()}
     <p>
-      Play a note, then play the same letter one octave up (e.g. the next C to the right). It sounds
-      like "the same note" — because its frequency is exactly twice as high. Watch the readout: the
-      hertz value doubles every octave, even though your fingers moved the same distance.
+      Play any key, then find the same letter one octave to the right. It sounds like the same
+      note, somehow higher — your ear hears "double the frequency" as a kind of rhyme. Watch the
+      readout while you climb: the hertz doubles every octave, even though your fingers move the
+      same distance each time.
     </p>
   {/snippet}
 </LessonScaffold>

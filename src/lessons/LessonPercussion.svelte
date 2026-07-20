@@ -96,21 +96,22 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Noise & percussion" subtitle="No pitch, all texture — then carve drums out of static with envelopes and filters.">
+<LessonScaffold {step} {total} {section} title="Noise & percussion" subtitle="Some of the best sounds have no pitch at all.">
   {#snippet intro()}
     <p>
-      Every sound so far had a pitch. <strong>Noise</strong> has none — every frequency at once,
-      like all the keys pressed together. <strong>White</strong> noise spreads energy evenly per
-      hertz (bright, hissy); <strong>pink</strong> rolls off 3 dB per octave (deeper, like rain) —
-      you can see the tilt in the spectrum.
+      Every sound so far has had a pitch. <strong>Noise</strong> has none — it's every frequency
+      at once, like all the piano keys pressed together, and then some. <strong>White</strong>
+      noise spreads its energy evenly and sounds like hiss. <strong>Pink</strong> noise turns the
+      high end down a little and sounds deeper, like steady rain. You can see the difference as a
+      tilt in the spectrum.
     </p>
     <p>
-      Percussion is mostly <em>shaped</em> noise and one clever trick. A <strong>snare</strong> is
-      a knock plus a burst of high-passed noise; a <strong>hi-hat</strong> is just noise with a
-      tight envelope — the decay alone decides closed vs open. And the <strong>kick</strong>? A
-      sine wave whose <em>pitch</em> gets the envelope: it starts high and dives in ~100 ms.
-      You've pointed envelopes at loudness all through this section — pointing one at
-      <strong>frequency</strong> is what makes a drum go <em>boom</em> instead of <em>beep</em>.
+      Drums are mostly shaped noise, plus one clever trick. A snare is a short knock plus a burst
+      of filtered noise. A hi-hat is nothing but noise with a very short envelope — the length
+      alone decides whether it sounds closed or open. And a kick is a sine wave whose
+      <em>pitch</em> gets the envelope: it starts high and dives in about a tenth of a second.
+      You've spent this section pointing envelopes at loudness. Point one at frequency and a beep
+      becomes a boom.
     </p>
   {/snippet}
 
@@ -157,12 +158,11 @@
 
   {#snippet tryThis()}
     <p>
-      Toggle white ↔ pink while the noise plays and watch the spectrum tilt. Then drum a beat on
-      <span class="font-mono">Z X C V</span> — kick, snare, closed hat, open hat. Drag
-      <strong>kick pitch drop</strong> to 60 Hz for a soft heartbeat, then to 400 Hz for that
-      808-style laser thump; stretch <strong>kick decay</strong> to a full second and it turns
-      into a falling bomb. Every one of these drums is built from things you already know:
-      oscillators, noise, filters, envelopes — just aimed at new targets.
+      Flip between white and pink while the noise plays and watch the spectrum tilt. Then drum a
+      beat on <span class="font-mono">Z X C V</span> — kick, snare, closed hat, open hat. Drag the
+      kick's pitch drop down to 60 Hz and it's a soft heartbeat; up at 400 Hz it snaps like a
+      laser. Stretch the decay to a full second and now it's a cartoon bomb falling. Every drum
+      here is built from things you already know, just aimed at new targets.
     </p>
   {/snippet}
 </LessonScaffold>

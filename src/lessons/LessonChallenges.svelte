@@ -183,17 +183,16 @@
   const active = $derived(CHALLENGES.find((c) => c.id === current)!);
 </script>
 
-<LessonScaffold {step} {total} {section} title="Sound Match" subtitle="You've learned the controls — now trust your ears. Recreate the hidden sound.">
+<LessonScaffold {step} {total} {section} title="Sound Match" subtitle="The controls were the easy part. Now train your ears.">
   {#snippet intro()}
     <p>
-      Every challenge hides a synth patch. <strong>Play the target</strong>, then
-      <strong>play yours</strong> and tweak until you can't tell them apart — the skills are the
-      same ones sound designers use every day: hearing a pitch, a timbre, a filter setting or an
-      envelope and dialing it in from nothing.
+      Each challenge hides a synth patch. Play the target, play yours, and adjust until you can't
+      tell them apart. This is the actual day-to-day skill of sound design: hearing a pitch, a
+      brightness, an envelope, and dialing it in from nothing.
     </p>
     <p>
-      Check your match for hints. Targets are randomized, so every challenge is replayable —
-      solving one once is luck, solving it three times is a skill.
+      Check your match to get hints. The targets are randomized, so come back and play again —
+      matching one once is luck; matching it three times is a skill.
     </p>
   {/snippet}
 
@@ -275,10 +274,10 @@
 
   {#snippet tryThis()}
     <p>
-      Stuck on pitch? Hum along with the target, then hum along with yours — your voice will tell
-      you which is higher. For the filter, listen to the <em>hiss and edge</em>, not the note. For
-      envelopes, listen for <em>when</em> the note arrives and how it lets go, not how it sounds in
-      the middle. These are the listening habits the whole course has been building toward.
+      Stuck on pitch? Hum along with the target, then hum along with yours — your own voice will
+      tell you which is higher. For the filter, listen to the hiss and edge rather than the note
+      itself. For envelopes, pay attention to when the note arrives and how it lets go, not what
+      it sounds like in the middle.
     </p>
   {/snippet}
 </LessonScaffold>

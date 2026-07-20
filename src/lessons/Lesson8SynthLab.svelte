@@ -60,12 +60,12 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Lab: Synth Lab" subtitle="Everything from this section, wired into one playable signal chain.">
+<LessonScaffold {step} {total} {section} title="Lab: Synth Lab" subtitle="Everything from this section, wired into one playable instrument.">
   {#snippet intro()}
     <p>
-      This is a real (if small) <strong>subtractive synth</strong>. A key press creates a
-      <strong>voice</strong> whose signal flows through the chain below. Each module is something
-      you've already learned — now they work together.
+      This is a real, if small, <strong>subtractive synth</strong>. Press a key and a voice is
+      born; its signal flows through the chain below and out of your speakers. You've met every
+      box already. This is the first time they're all connected.
     </p>
     <div class="my-3 flex flex-wrap items-center gap-2 font-mono text-xs">
       {#each ['Oscillator', 'Filter', 'Amp + ADSR', 'Output'] as node, i (node)}
@@ -131,11 +131,10 @@
 
   {#snippet tryThis()}
     <p>
-      Build a <strong>bass</strong>: saw wave, low-pass cutoff around 600 Hz, short attack, low
-      sustain. Build a <strong>pad</strong>: long attack and release, higher cutoff, a touch of
-      vibrato depth. Hold chords (multiple keys) and tweak the filter while they ring. You now have
-      the whole subtractive-synthesis loop in your hands — oscillator → filter → envelope, with
-      modulation on top.
+      Make a bass: saw wave, cutoff around 600 Hz, short attack, low sustain. Now make a pad: slow
+      attack, long release, higher cutoff, a little vibrato. Hold a chord and move the cutoff
+      while it rings. Nearly every synthesizer you'll ever meet is some version of this chain —
+      oscillator, filter, envelope — with more knobs.
     </p>
   {/snippet}
 </LessonScaffold>

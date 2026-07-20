@@ -189,21 +189,18 @@
   });
 </script>
 
-<LessonScaffold {step} {total} {section} title="Lab: Signal Chain" subtitle="One synth, five modules, one LFO with a patch cable — routing is the instrument now.">
+<LessonScaffold {step} {total} {section} title="Lab: Signal Chain" subtitle="The LFO gets a patch cable, and where you plug it in changes everything.">
   {#snippet intro()}
     <p>
-      This is a <strong>semi-modular synth</strong>: the modules are fixed, but <em>you</em> decide
-      the order, what's active, and — the new power — <strong>where the modulation goes</strong>.
-      The filter now lives in the chain like any other module, so you can distort a filtered sound
-      or filter a distorted one.
+      This is a <strong>semi-modular synth</strong>: the modules are fixed, but you choose the
+      order, what's active, and where the modulation goes. The filter now sits in the chain like
+      any other module, so "filter before the distortion, or after?" is your decision too.
     </p>
     <p>
-      The <strong>LFO</strong> has a patch cable of its own. Point it at <strong>pitch</strong> for
-      vibrato, at the filter's <strong>cutoff</strong> for that auto-wah sweep, at
-      <strong>volume</strong> for tremolo, or at the delay's <strong>time</strong> for tape warble.
-      Same wave, same rate — four completely different effects, decided purely by
-      <em>where the cable lands</em>. That is modulation routing, and it's the heart of every
-      modular synth ever built.
+      The interesting control is the LFO's destination. Plug it into pitch and you get vibrato.
+      Into cutoff, an automatic wah. Into volume, tremolo. Into the delay's time, tape warble.
+      Same LFO, same rate, same depth — four different effects, decided entirely by where the
+      cable lands. Every modular synthesizer ever built runs on this one idea.
     </p>
   {/snippet}
 
@@ -296,12 +293,11 @@
 
   {#snippet tryThis()}
     <p>
-      Hold a chord and point the LFO at <strong>cutoff</strong> with depth ~60% and rate ~0.3 Hz —
-      a slow auto-wah breathing through the harmonics. Snap the rate to 6 Hz: now it stutters.
-      Point the same LFO at <strong>volume</strong> — tremolo; at <strong>delay time</strong> (turn
-      the delay on) — seasick tape warble. Then rebuild last section's tricks: filter
-      <em>after</em> distortion tames the fizz; filter <em>before</em> gives the distortion more to
-      chew on. When the free-patch playground arrives, you'll already think in cables.
+      Hold a chord, point the LFO at cutoff, and set the rate low — around 0.3 Hz. The filter
+      breathes. Snap the rate up to 6 Hz and it stutters instead. Now move the same cable to
+      volume, then to delay time with the delay switched on, and listen to how much changes when
+      nothing changed but the destination. Then revisit last section's question: filter after the
+      distortion tames it; filter before gives the distortion more to chew on.
     </p>
   {/snippet}
 </LessonScaffold>
