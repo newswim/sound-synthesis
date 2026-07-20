@@ -74,7 +74,8 @@
       an echo. The copy fuses with the original into one thicker sound. Now point an LFO at the
       <em>delay time</em>. The copy drifts slightly sharp and flat as the delay stretches and
       shrinks, like a second player who can't quite hold the tuning. That shimmer is
-      <strong>chorus</strong>.
+      <strong>chorus</strong> — and it's why a choir sounds richer than one singer: nobody is
+      perfectly in tune with anybody else.
     </p>
     <p>
       Shrink the delay further, down to a few milliseconds, and add feedback. Now the copy

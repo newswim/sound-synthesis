@@ -35,12 +35,12 @@
   onDestroy(() => tone.dispose());
 </script>
 
-<LessonScaffold {step} {total} {section} title="Waveforms & timbre" subtitle="Why a trumpet and a flute playing the same note still sound different.">
+<LessonScaffold {step} {total} {section} title="Waveforms & timbre" subtitle="Same note, different character — a wave's shape is its tone colour.">
   {#snippet intro()}
     <p>
-      A sine wave is the plainest sound there is. Most sounds are richer, and the difference is
-      the shape of the wave. Shape is what makes a trumpet sound like a trumpet. Musicians call
-      this quality <strong>timbre</strong>.
+      Play the same note on a trumpet and a flute and nobody would confuse them. What's different
+      is the shape of the wave. Musicians call this quality <strong>timbre</strong> — the colour
+      of a sound.
     </p>
     <p>
       Here is the surprising part: any repeating shape can be built by stacking sine waves at
@@ -48,9 +48,10 @@
       the spectrum shows you exactly which ones a sound contains.
     </p>
     <p>
-      Each of the four classic shapes has its own recipe. Sine: just the fundamental. Triangle:
-      odd harmonics that fade out quickly, so it sounds soft. Square: odd harmonics that fade
-      slowly, so it buzzes. Saw: every harmonic, which makes it the brightest of the four.
+      Each of the four classic shapes has its own recipe. A sine is just the fundamental. A
+      triangle adds odd harmonics that fade out quickly — it sounds soft and "hollow". A square's
+      odd harmonics fade slowly, so it "buzzes" like a reed. And a saw has every harmonic — the
+      brightest of the four, and the workhorse of synths.
     </p>
   {/snippet}
 
@@ -70,10 +71,11 @@
 
   {#snippet tryThis()}
     <p>
-      Play a note and switch between the four shapes. The sine has one lonely spike; the saw has a
-      whole comb of them. More harmonics means a brighter sound. Keep that in mind, because most
-      synthesizers work by starting with a bright wave and then carving harmonics away with a
-      filter. That's where this course is headed.
+      Play a note and switch between the four shapes. Listen to the brightness climb as you go
+      sine, triangle, square, saw — and watch the spectrum grow from one lonely spike to a whole
+      comb of them. More harmonics means a brighter sound. Keep that in mind, because most synths
+      start with a bright wave and carve harmonics away with a filter. That's where this course is
+      headed.
     </p>
   {/snippet}
 </LessonScaffold>

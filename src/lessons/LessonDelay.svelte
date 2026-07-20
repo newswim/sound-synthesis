@@ -74,9 +74,11 @@
 <LessonScaffold {step} {total} {section} title="Delay & feedback" subtitle="An echo, and then an echo of the echo.">
   {#snippet intro()}
     <p>
-      A <strong>delay</strong> records the signal and plays it back a moment later. On its own
-      that gives you exactly one echo. The interesting part is <strong>feedback</strong>: wire the
-      delay's output back into its own input, and every echo produces a quieter copy of itself.
+      Shout across a canyon and the canyon answers, one beat late. A <strong>delay</strong> is
+      that canyon in a box: it records the signal and plays it back a moment later. On its own
+      that gives you exactly one echo. The interesting part is <strong>feedback</strong> — wire
+      the delay's output back into its own input, and every echo produces a quieter copy of
+      itself.
     </p>
     <p>
       This is the first time in the course a signal travels in a loop instead of a straight line,

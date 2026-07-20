@@ -76,8 +76,9 @@
     <p>
       Clap in a big empty church and the clap smears into a long, soft wash. What you're hearing
       is thousands of echoes off every surface, arriving too close together to count.
-      <strong>Reverb</strong> is that wash, and each space makes its own. A room's fingerprint is
-      its <strong>impulse response</strong> — the exact way it answers one sharp clap.
+      <strong>Reverb</strong> is that wash, and every space makes its own — it's why singing in
+      the bathroom sounds so good. A room's fingerprint is its <strong>impulse response</strong>:
+      the exact way it answers one sharp clap.
     </p>
     <p>
       <strong>Convolution</strong> reverb takes a fingerprint and applies it to any sound: every

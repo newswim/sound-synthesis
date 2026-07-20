@@ -93,12 +93,13 @@
   onDestroy(() => held?.stop());
 </script>
 
-<LessonScaffold {step} {total} {section} title="Envelopes (ADSR)" subtitle="Notes have a beginning, a middle, and an end.">
+<LessonScaffold {step} {total} {section} title="Envelopes (ADSR)" subtitle="Every note has a life story: how it arrives, how it stays, and how it leaves.">
   {#snippet intro()}
     <p>
       Pluck a guitar string and the sound snaps in, then slowly dies away. Bow a cello and it
-      swells in instead. An <strong>envelope</strong> is the curve that controls how a note's
-      loudness moves through time, from the moment you press a key until after you let it go.
+      swells in instead. Same idea — a note's loudness has a shape in time — told two different
+      ways. An <strong>envelope</strong> is that shape: the curve a note follows from the moment
+      you press a key until after you let it go.
     </p>
     <p>
       The classic envelope has four stages, named <strong>ADSR</strong>. Attack is how long the

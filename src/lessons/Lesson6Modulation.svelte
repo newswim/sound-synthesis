@@ -120,13 +120,13 @@
   ];
 </script>
 
-<LessonScaffold {step} {total} {section} title="Modulation" subtitle="What happens when one oscillator turns the knobs on another.">
+<LessonScaffold {step} {total} {section} title="Modulation" subtitle="Let a robot turn the knob for you — slowly for motion, fast for magic.">
   {#snippet intro()}
     <p>
-      So far you've moved every control by hand. <strong>Modulation</strong> hands a control to a
+      So far you've turned every knob by hand. <strong>Modulation</strong> hands the knob to a
       machine: one signal automatically wiggles a setting on another. The machine is usually an
-      <strong>LFO</strong>, a low-frequency oscillator — too slow to hear as a tone, useful as a
-      remote control.
+      <strong>LFO</strong>, a low-frequency oscillator — a wave too slow to hear as a tone, doing
+      the knob-turning for you, perfectly in rhythm, forever.
     </p>
     <p>
       Point the LFO at pitch and you get <strong>vibrato</strong>, a singer's wobble. Point it at

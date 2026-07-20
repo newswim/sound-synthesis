@@ -78,19 +78,19 @@
   onDestroy(stop);
 </script>
 
-<LessonScaffold {step} {total} {section} title="Filters & EQ" subtitle="Start with too many harmonics, then take some away.">
+<LessonScaffold {step} {total} {section} title="Filters & EQ" subtitle="You already know what a filter sounds like — it sounds like the room next door.">
   {#snippet intro()}
     <p>
-      The waveforms lesson ended with a promise: synths mostly work by starting bright and carving
-      away. The carving tool is a <strong>filter</strong> — it lets some frequencies through and
-      quiets the rest. Building sounds this way is called subtractive synthesis, and it's how most
-      classic synthesizers work.
+      Music playing in the next room sounds "muffled" and "dull". That's a filter at work: the
+      wall lets the low frequencies through and blocks the high ones. Open the door and the sound
+      turns "bright" again. A <strong>filter</strong> is that wall, with a handle you can turn.
     </p>
     <p>
-      A <strong>low-pass</strong> filter keeps the lows and rolls off the highs, which makes
-      things darker. A <strong>high-pass</strong> does the opposite. A <strong>band-pass</strong>
-      keeps only a slice in the middle. The <strong>cutoff</strong> sets where the filter starts
-      working, and <strong>resonance</strong> boosts a narrow peak right at the cutoff — a sound
+      The waveforms lesson ended with a promise: synths start bright and carve harmonics away.
+      This is that carving tool. A <strong>low-pass</strong> filter keeps the lows and rolls off
+      the highs. A <strong>high-pass</strong> does the opposite. A <strong>band-pass</strong>
+      keeps only a slice in the middle. The <strong>cutoff</strong> sets where the wall begins,
+      and <strong>resonance</strong> boosts a narrow peak right at the cutoff — the vocal "wah"
       you'll recognize the moment you hear it.
     </p>
   {/snippet}

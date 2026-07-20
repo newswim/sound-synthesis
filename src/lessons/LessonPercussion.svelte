@@ -160,9 +160,9 @@
     <p>
       Flip between white and pink while the noise plays and watch the spectrum tilt. Then drum a
       beat on <span class="font-mono">Z X C V</span> — kick, snare, closed hat, open hat. Drag the
-      kick's pitch drop down to 60 Hz for a soft heartbeat, then up to 400 Hz and it snaps like a
-      laser. Stretch the decay to a full second and see what it becomes. Every drum here is built
-      from things you already know, just aimed at new targets.
+      kick's pitch drop down to 60 Hz and it's a soft heartbeat; up at 400 Hz it snaps like a
+      laser. Stretch the decay to a full second and now it's a cartoon bomb falling. Every drum
+      here is built from things you already know, just aimed at new targets.
     </p>
   {/snippet}
 </LessonScaffold>
